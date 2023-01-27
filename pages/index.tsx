@@ -10,7 +10,7 @@ const posts = [
 
 const Home: NextPage = () => {
   return (
-    <div className="container mx-auto items-center justify-center py-2 mb-8 bg-gray-300">
+    <div className="container mx-auto items-center justify-center py-2 mb-8">
       <Head>
         <title>My Blog</title>
         <link rel="icon" href="/favicon.ico" />
