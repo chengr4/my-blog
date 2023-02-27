@@ -1,7 +1,13 @@
 [
   {
+    "title": "title of the post",
+    "date": "2014-03-19",
+    "categories": ["For Tags"],
+    "file": "markdown file",
+    "excerpt": "excerpt of the post"
+  },
+  {
     "title": "The 100",
-    "description": "Set ninety-seven years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends one hundred juvenile delinquents back to Earth, in hopes of possibly re-populating the planet.",
     "date": "2014-03-19",
     "categories": [
       "Action",
@@ -15,7 +21,6 @@
   },
   {
     "title": "The 110",
-    "description": "Set ninety-seven years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends one hundred juvenile delinquents back to Earth, in hopes of possibly re-populating the planet.",
     "date": "2014-03-19",
     "categories": [
       "Action",
