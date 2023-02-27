@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { PostCard, PostWidget, Category } from '../components';
+import { PostCard, PostWidget } from '../components';
 import { uniqueId } from 'lodash';
 
 const posts = [
@@ -24,7 +24,8 @@ const Home: NextPage = () => {
             <div className='lg:sticky relative top-8'>
               {/* Show recent posts */}
               <PostWidget />
-              <Category />
+              {/* Still thinking how to implement Category */}
+              {/* <Category /> */}
             </div>
         </div>
       </div>
