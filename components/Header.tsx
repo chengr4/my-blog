@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 
+
 const Header = () => {
+  const [categories, setCategories] = useState<any[]>([]);
+
+  // fetch data from public/categories.json
+  useEffect(() => {
+    fetch('/categories.json')
+      .then((res) => res.json())
+      .then((data) => setCategories(data));
+  }, []);
+
   return (
     <div className='container mx-auto px-10 mb-8'>
       <div className='border-b w-full inline-block py-8'>
@@ -14,18 +24,14 @@ const Header = () => {
           </Link>
         </div>
         <div className='hidden md:float-left md:contents'>
-          <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-            About
-          </span>
-          <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-            Others
-          </span>
-          <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-            CS
-          </span>
-          <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-            Web
-          </span>
+          {categories.map((category, index) => (
+            <Link key={index} href={`/category/${category.slug}`}>
+              <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
+                {category.name}
+              </span>
+            </Link>
+          ))
+          }
         </div>
       </div>
     </div>
