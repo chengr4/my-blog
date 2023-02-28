@@ -9,7 +9,7 @@ const Header = () => {
         <div className='md:float-left block'>
           <Link href='/'>
             <span className='cursor-pointer font-bold text-4xl text-white'>
-              {"Eddie's Blog"}
+              Eddie&apos;s Blog
             </span>
           </Link>
         </div>
@@ -18,7 +18,7 @@ const Header = () => {
             About
           </span>
           <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
-            Other
+            Others
           </span>
           <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
             CS
