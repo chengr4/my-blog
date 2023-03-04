@@ -2,13 +2,20 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import { PostCard, PostWidget } from '../components';
 import { uniqueId } from 'lodash';
+import { useEffect, useState } from 'react';
 
-const posts = [
-  { title: 'test1', des: 'tttttt' },
-  { title: 'test2', des: 'geageag' },
-];
 
 const Home: NextPage = () => {
+  const [posts, setPosts] = useState([]);
+
+  // fetch data from public/posts.json
+  useEffect(() => {
+    fetch('/posts/example.json')
+      .then((res) => res.json())
+      .then((data) => setPosts(data));
+  }, []);
+
+
   return (
     <div className="container mx-auto items-center justify-center py-2 mb-8">
       <Head>
@@ -33,4 +40,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Home;
