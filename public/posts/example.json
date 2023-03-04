@@ -3,7 +3,7 @@
     "title": "title of the post",
     "date": "2014-03-19",
     "categories": ["For Tags"],
-    "file": "markdown file",
+    "file": "markdown file (no .md)",
     "excerpt": "excerpt of the post"
   },
   {
@@ -16,7 +16,7 @@
       "Sci-Fi",
       "Thriller"
     ],
-    "file": "test_212342434.md",
+    "file": "test_212342434",
     "excerpt": "Set ninety-seven years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends one hundred juvenile delinquents back to Earth, in hopes of possibly re-populating the planet."
   },
   {
@@ -29,7 +29,7 @@
       "Sci-Fi",
       "Thriller"
     ],
-    "file": "test_212444434.md",
+    "file": "test_212444434",
     "excerpt": "Set ninety-seven years after a nuclear war has destroyed civilization, when a spaceship housing humanity's lone survivors sends one hundred juvenile delinquents back to Earth, in hopes of possibly re-populating the planet."
   }
 ]
