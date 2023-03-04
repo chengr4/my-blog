@@ -7,6 +7,7 @@
 ## References
 
 - https://github.com/adrianhajdin/project_graphql_blog
+- https://github.com/sindresorhus/github-markdown-css
 
 ## Next.js + Tailwind CSS Example
 
