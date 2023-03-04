@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import '../styles/github-markdown-light.css'
 import type { AppProps } from 'next/app'
 import { Layout } from '../components'
 
