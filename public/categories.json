@@ -1,18 +1,18 @@
 [
   {
-    "name": "Web",
-    "slug": "web"
-  },
-  {
-    "name": "CS",
-    "slug": "cs"
+    "name": "About",
+    "slug": "about"
   },
   {
     "name": "Others",
     "slug": "others"
   },
   {
-    "name": "About",
-    "slug": "about"
+    "name": "Web",
+    "slug": "web"
+  },
+  {
+    "name": "CS",
+    "slug": "cs"
   }
 ]
