@@ -1,23 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 
 const PostDetail = () => {
-  const markdown = `# A paragraph with *emphasis* and **strong importance**.
+  const [markdown, setMarkdown] = useState('');  
 
-  > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-  
-  * Lists
-  * [ ] todo
-  * [x] done
-  
-  A table:
-  
-  | a | b |
-  | - | - |
-  | fefe | fefe |
+  useEffect(() => {
+    async function fetchContent() {
+      // remove /post from the path
+      const path = window.location.pathname.replace('/post', '');
+      const response = await fetch(`/posts/contents/${path}.md`);
+      const data = await response.text();
+      setMarkdown(data);
+    }
+    fetchContent();
+  }, []);
 
-  `;
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
       <article className='markdown-body'>
