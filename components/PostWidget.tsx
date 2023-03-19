@@ -10,9 +10,9 @@ const PostWidget = () => {
 
   // fetch data from public/posts.json
   useEffect(() => {
-    fetch('/posts/example.json')
+    fetch('/posts/index.json')
       .then((res) => res.json())
-      .then((data) => setPosts(data));
+      .then((data) => setPosts(data.slice(0, 3)));
   });
 
   return (
