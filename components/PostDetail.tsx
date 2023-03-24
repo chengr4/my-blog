@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 
-const PostDetail = () => {
-  const [markdown, setMarkdown] = useState('');  
+interface PostDetailProps {
+  markdown: string;
+};
 
-  useEffect(() => {
-    async function fetchContent() {
-      // remove /post from the path
-      const path = window.location.pathname.replace('/post', '');
-      const response = await fetch(`/posts/contents/${path}.md`);
-      const data = await response.text();
-      setMarkdown(data);
-    }
-    fetchContent();
-  }, []);
-
+const PostDetail = ({ markdown }: PostDetailProps) => {
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
       <article className='markdown-body'>
