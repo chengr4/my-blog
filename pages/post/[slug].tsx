@@ -1,23 +1,26 @@
 import React from "react";
 import { PostWidget, PostDetail } from "../../components";
+import getMarkDownContent from "../../services/getMarkDownContent";
+import getPostsIndex from "../../services/getPostsIndex";
 
 interface PostDetailsProps {
   markdown: string;
+  posts: any[];
 }
 
-const PostDetails = (props: PostDetailsProps) => {
+const PostDetails = ({ markdown, posts }: PostDetailsProps) => {
   return (
     <>
       <div className="container mx-auto px-10 mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="col-span-1 lg:col-span-8">
-            <PostDetail markdown={props.markdown} />
+            <PostDetail markdown={markdown} />
             {/* <Author author={post.author} /> */}
             {/* <AdjacentPosts slug={post.slug} createdAt={post.createdAt} /> */}
           </div>
           <div className="col-span-1 lg:col-span-4">
             <div className="relative lg:sticky top-8">
-              <PostWidget />
+              <PostWidget posts={posts} />
             </div>
           </div>
         </div>
