@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { PostCard, PostWidget } from "../components";
 import { uniqueId } from "lodash";
+import getPostsIndex from "../services/getPostsIndex";
 
 interface HomeProps {
   posts: any[];
@@ -24,7 +25,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
         <div className="lg:col-span-4 col-span-1">
           <div className="lg:sticky relative top-8">
             {/* Show recent posts */}
-            <PostWidget />
+            <PostWidget posts={posts} />
             {/* Still thinking how to implement Category */}
             {/* <Category /> */}
           </div>
@@ -35,9 +36,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  // Fetch data from an API or database
-  const res = await fetch('https://raw.githubusercontent.com/chengr4/my-blog/main/data/posts/index.json');
-  const data = await res.json();
+  const data = await getPostsIndex();
 
   return {
     props: {

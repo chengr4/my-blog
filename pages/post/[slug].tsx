@@ -27,10 +27,7 @@ const PostDetails = (props: PostDetailsProps) => {
 };
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    "https://raw.githubusercontent.com/chengr4/my-blog/main/data/posts/index.json"
-  );
-  const data = await res.json();
+  const data = await getPostsIndex();
 
   const paths = data.map((post: { file: any }) => ({
     params: { slug: post.file },
@@ -43,16 +40,15 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(ctx: any) {
-  const file = ctx.params.slug;
-  // Fetch data from an API or database
-  const res = await fetch(
-    `https://raw.githubusercontent.com/chengr4/my-blog/main/data/posts/contents/${file}.md`
-  );
-  const data = await res.text();
+  const fileName = ctx.params.slug;
+
+  const markdown = await getMarkDownContent(fileName);
+  const posts = await getPostsIndex();
 
   return {
     props: {
-      markdown: data,
+      markdown,
+      posts,
     },
   };
 }
