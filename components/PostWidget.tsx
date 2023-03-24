@@ -2,25 +2,22 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 interface PostWidgetProps {
-
+  posts: any[];
 }
 
-const PostWidget = () => {
-  const [posts, setPosts] = useState<any[]>([]);
+const PostWidget = ({ posts }: PostWidgetProps) => {
+  const [modifiedPosts, setModifiedPosts] = useState<any[]>([]);
 
-  // fetch data from public/posts.json
   useEffect(() => {
-    fetch('/posts/index.json')
-      .then((res) => res.json())
-      .then((data) => setPosts(data.slice(0, 3)));
-  });
+      setModifiedPosts(posts.slice(0, 3));
+  }, [posts]);
 
   return (
     <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
       <h3 className='text-xl mb-8 font-semibold border-b pd-4'>
         Recent Posts
       </h3>
-      {posts.map((post) => (
+      {modifiedPosts.map((post) => (
         <div key={post.title} className='flex items-center w-full mb-4'>
           <div className='flew-grow ml-4'>
             <p className='text-gray-500 font-xs'>
