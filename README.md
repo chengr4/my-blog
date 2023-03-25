@@ -1,5 +1,9 @@
 ## My Blog
 
+## TODO
+
+- Add code highlighting
+
 ## Logs
 
 - Run `yarn create next-app --example with-tailwindcss .`
