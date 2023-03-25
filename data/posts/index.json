@@ -7,5 +7,15 @@
     ],
     "file": "day2-read-rust-atomics-and-locks_230304",
     "excerpt": "A process should always ask OS kernel first and then interact with another process in Rust, to spawn a new thread"
+  },
+  {
+    "title": "[JavaScript] 我對 Object key 的錯誤認知",
+    "date": "2022-09-17",
+    "categories": [
+      "cs",
+      "web"
+    ],
+    "file": "javascript-my-misunderstanding-about-object-key_220917",
+    "excerpt": "我原本一直以為假若使用 Array 或者 Object 當作另一個 Object 的 key 時，會使用他們的 reference, 直到我遇到了 bug 並且簡單做了測試"
   }
 ]
