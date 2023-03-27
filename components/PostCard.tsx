@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 interface PostCardProps {
   post: {
-    title: string
-    excerpt: string
-    file: string
-    date: string
+    title: string;
+    excerpt: string;
+    file: string;
+    date: string;
   }
 };
 
