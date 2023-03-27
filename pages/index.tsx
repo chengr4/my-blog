@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { PostCard, PostWidget } from "../components";
 import { uniqueId } from "lodash";
-import getPostsIndex from "../services/getPostsIndex";
+import getAllPosts from "../services/getAllPosts";
 
 interface HomeProps {
   posts: any[];
@@ -36,7 +36,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  const data = await getPostsIndex();
+  const data = await getAllPosts();
 
   return {
     props: {

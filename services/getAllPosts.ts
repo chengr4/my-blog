@@ -1,4 +1,4 @@
-export default async function getPostsIndex() {
+export default async function getAllPosts() {
   const res = await fetch('https://raw.githubusercontent.com/chengr4/my-blog/main/data/posts/index.json');
   const data = await res.json();
 

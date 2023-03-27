@@ -1,7 +1,7 @@
 import React from "react";
 import { PostWidget, PostDetail } from "../../components";
 import getMarkDownContent from "../../services/getMarkDownContent";
-import getPostsIndex from "../../services/getPostsIndex";
+import getAllPosts from "../../services/getAllPosts";
 
 interface PostDetailsProps {
   markdown: string;
@@ -30,7 +30,7 @@ const PostDetails = ({ markdown, posts }: PostDetailsProps) => {
 };
 
 export async function getStaticPaths() {
-  const data = await getPostsIndex();
+  const data = await getAllPosts();
 
   const paths = data.map((post: { file: any }) => ({
     params: { slug: post.file },
@@ -46,7 +46,7 @@ export async function getStaticProps(ctx: any) {
   const fileName = ctx.params.slug;
 
   const markdown = await getMarkDownContent(fileName);
-  const posts = await getPostsIndex();
+  const posts = await getAllPosts();
 
   return {
     props: {
