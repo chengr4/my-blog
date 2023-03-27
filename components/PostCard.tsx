@@ -13,7 +13,7 @@ interface PostCardProps {
 const PostCard = ({ post }: PostCardProps) => {
   return (
     <div className='bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8'>
-      <Link href={`/post/${post.file}`} >
+      <Link href={`/posts/${post.file}`} >
         <h1 className='transition duration-700 mb-8 cursor:pointer text-center hover:text-pink-600 text-3xl font-semibold'>
           {post.title}
         </h1>

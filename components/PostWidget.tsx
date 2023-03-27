@@ -23,7 +23,7 @@ const PostWidget = ({ posts }: PostWidgetProps) => {
             <p className='text-gray-500 font-xs'>
               {post.date}
             </p>
-            <Link href={`/post/${post.file}`} key={post.title}>
+            <Link href={`/posts/${post.file}`} key={post.title}>
               {post.title}
             </Link>
           </div>
