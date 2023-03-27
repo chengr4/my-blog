@@ -1,6 +1,6 @@
 import React from "react";
 import { PostWidget, PostDetail } from "../../components";
-import getMarkDownContent from "../../services/getMarkDownContent";
+import getPostContent from "../../services/getPostContent";
 import getAllPosts from "../../services/getAllPosts";
 
 interface PostDetailsProps {
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(ctx: any) {
   const fileName = ctx.params.slug;
 
-  const markdown = await getMarkDownContent(fileName);
+  const markdown = await getPostContent(fileName);
   const posts = await getAllPosts();
 
   return {
