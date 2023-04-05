@@ -12,16 +12,18 @@ export default function CategoryPosts({ posts }: CategoryPostsProps) {
   return (
     <div className="container mx-auto px-10 mb-8">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="col-span-1 lg:col-span-8">
+        {/* set span-8 to 12 */}
+        <div className="col-span-1 lg:col-span-12"> 
           {posts.map((post, index) => (
             <PostCard key={index} post={post} />
           ))}
         </div>
-        <div className="col-span-1 lg:col-span-4">
-          <div className="relative lg:sticky top-8">
+        {/* hide right span-4 area */}
+        {/* <div className="col-span-1 lg:col-span-4"> */}
+          {/* <div className="relative lg:sticky top-8"> */}
             {/* <Categories /> */}
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
       </div>
     </div>
   );
@@ -40,7 +42,7 @@ export async function getStaticPaths() {
 // Fetch data at build time
 export async function getStaticProps(ctx: any) {
   const category = ctx.params.slug;
-  const matchedPosts = await getCategoryPosts(category);  
+  const matchedPosts = await getCategoryPosts(category);
 
   return {
     props: { posts: matchedPosts },
