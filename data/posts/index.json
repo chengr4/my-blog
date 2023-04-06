@@ -1,5 +1,14 @@
 [
   {
+    "title": "Polymorphism in Golang",
+    "date": "2023-04-06",
+    "categories": [
+      "cs"
+    ],
+    "file": "polymorphism-in-golang_230406",
+    "excerpt": "Polymorphism 的目的？ 藉由 Polymorphism 使 code 更加靈活、reusable、易擴展和可維護"
+  },
+  {
     "title": "[Day2] Read Rust Atomics and Locks",
     "date": "2023-03-04",
     "categories": [
