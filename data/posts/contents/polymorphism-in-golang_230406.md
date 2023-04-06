@@ -10,7 +10,9 @@ morphism: Forms
 
 Polymorphism 是物件導向程式設計 (OOP) 中的一個核心概念，表示同一個方法 (method) 可以在不同的物件中具有不同的實現方式。這個概念讓我們可以用統一的方式來操作不同的物件，並且能夠根據不同的情況，呼叫適當的方法。
 
-Polymorphism 的核心思想是「以一種通用的介面，操作不同的物件，使其產生不同的結果」。在 Polymorphism 中，物件的行為會根據所屬的物件，而有所不同。這種行為的多樣性，是 Polymorphism 最重要的特徵之一。
+Polymorphism 的核心思想是「以一種通用的介面，操作不同的物件，使其產生不同的結果」。**在 Polymorphism 中，物件的行為會根據所屬的物件而有所不同。**
+
+這種行為的多樣性，是 Polymorphism 最重要的特徵之一。
 
 ## Polymorphism 的目的？
 
@@ -45,7 +47,7 @@ func CalculateArea(s Shape) float64 {
     return s.Area()
 }
 
-// Line 48-56: 易擴展，
+// Line 48-56: 易擴展，直接新增一個 Triangle
 type Triangle struct {
     Base   float64
     Height float64
