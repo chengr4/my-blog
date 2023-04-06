@@ -2,7 +2,8 @@
 
 ## TODO
 
-- Add code highlighting
+- [x] Add code highlighting
+- [ ] Add analytics (google analytics)?
 
 ## Logs
 
