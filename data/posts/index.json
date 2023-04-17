@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day3] Read Rust Atomics and Locks",
+    "date": "2023-04-17",
+    "categories": [
+      "cs"
+    ],
+    "file": "day3-read-rust-atomics-and-locks_230409",
+    "excerpt": "The `std::thread::spawn` function is actually just a convenient shorthand for `std::thread::Builder::new().spawn().unwrap()"
+  },
+  {
     "title": "Polymorphism in Golang",
     "date": "2023-04-06",
     "categories": [
