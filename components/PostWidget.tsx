@@ -21,7 +21,7 @@ const PostWidget = ({ posts }: PostWidgetProps) => {
         <div key={post.title} className='flex items-center w-full mb-4'>
           <div className='flew-grow ml-4'>
             <p className='text-gray-500 font-xs'>
-              {post.date}
+              {post.editedDate || post.createdDate}
             </p>
             <Link href={`/posts/${post.file}`} key={post.title}>
               {post.title}
