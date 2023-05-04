@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Golang] Golang 的 Set",
+    "createdDate": "2023-05-04",
+    "categories": [
+      "cs"
+    ],
+    "file": "golang-set-in-golang_230504",
+    "excerpt": "某天在使用 Golang 的時候，突然發現原來 Golang 沒有像其他語言一樣有實作 Set 的 data structure，稍微爬了文後發現，原來 Golang 會用 map 來模擬 Set ，以下是僅是小小的紀錄。"
+  },
+  {
     "title": "[Day3] Read Rust Atomics and Locks",
     "createdDate": "2023-04-17",
     "categories": [
