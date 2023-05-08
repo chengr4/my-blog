@@ -12,7 +12,7 @@
 
 Eg:
 
-```golang
+```go
 mySet := map[string]bool{}
 mySet["apple"] = true
 mySet["banana"] = true
