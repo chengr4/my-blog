@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { codeBlockStyle } from '../config';
 
 interface PostDetailProps {
   markdown: string;
@@ -22,7 +22,7 @@ const PostDetail = ({ markdown }: PostDetailProps) => {
                   language={match[1]}
                   PreTag="div"
                   {...props}
-                  style={a11yDark}
+                  style={codeBlockStyle}
                 >
                   {String(children).replace(/\n$/, '')}
                 </SyntaxHighlighter>
