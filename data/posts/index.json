@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day4] Read Rust Atomics and Locks",
+    "createdDate": "2023-05-08",
+    "categories": [
+      "cs"
+    ],
+    "file": "day4-read-rust-atomics-and-locks_230508",
+    "excerpt": "std::thread::scope spawn scoped threads => possible to safely borrow local variables. eg:"
+  },
+  {
     "title": "[Golang] Golang 的 Set",
     "createdDate": "2023-05-04",
     "categories": [
