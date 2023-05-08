@@ -1,4 +1,4 @@
-# Polymorphism in Golang
+# [Golang] Polymorphism in Golang
 
 > 以下是我與 ChatGTP 老師問答的總結，所以可能會有錯誤，請斟酌閱讀，感謝
 

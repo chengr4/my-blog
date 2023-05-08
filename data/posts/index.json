@@ -24,7 +24,7 @@
     "categories": [
       "cs"
     ],
-    "file": "polymorphism-in-golang_230406",
+    "file": "golang-polymorphism-in-golang_230406",
     "excerpt": "Polymorphism 的目的？ 藉由 Polymorphism 使 code 更加靈活、reusable、易擴展和可維護"
   },
   {
