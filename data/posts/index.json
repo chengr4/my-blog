@@ -18,8 +18,9 @@
     "excerpt": "The `std::thread::spawn` function is actually just a convenient shorthand for `std::thread::Builder::new().spawn().unwrap()"
   },
   {
-    "title": "Polymorphism in Golang",
+    "title": "[Golang] Polymorphism in Golang",
     "createdDate": "2023-04-06",
+    "editedDate": "2023-05-08",
     "categories": [
       "cs"
     ],
