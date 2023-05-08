@@ -20,7 +20,7 @@ Polymorphism 的核心思想是「以一種通用的介面，操作不同的物�
 
 Eg:
 
-```golang
+```go
 type Shape interface {
     Area() float64
 }
