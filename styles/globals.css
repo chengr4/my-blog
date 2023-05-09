@@ -4,8 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
-
-/* TODO: add background black */
 html,
 body {
   padding: 0;
@@ -13,4 +11,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   /* black */
   background-color: #000000;
+}
+
+ul {
+  list-style: initial;
 }
