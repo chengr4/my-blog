@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day5] Read Rust Atomics and Locks",
+    "createdDate": "2023-05-11",
+    "categories": [
+      "cs"
+    ],
+    "file": "day5-read-rust-atomics-and-locks_230511",
+    "excerpt": "Some ways to share ownership to threads: `static`, `Box::leak(Box::new([1, 2, 3]));`, `Arc`"
+  },
+  {
     "title": "[Day4] Read Rust Atomics and Locks",
     "createdDate": "2023-05-08",
     "categories": [
