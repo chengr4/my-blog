@@ -2,6 +2,8 @@
 
 > by Mara Bos
 
+> At Topics: Chapter 1. Basics of Rust Concurrency
+
 ## Prerequisites
 
 - Know `'static` : A reference can live for the entire duration of the program

@@ -2,6 +2,8 @@
 
 > by Mara Bos
 
+> At Topics: Chapter 1. Basics of Rust Concurrency
+
 ## Notes
 
 - A process should always ask OS kernel first and then interact with another process
