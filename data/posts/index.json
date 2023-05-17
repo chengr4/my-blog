@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day6] Read Rust Atomics and Locks",
+    "createdDate": "2023-05-17",
+    "categories": [
+      "cs"
+    ],
+    "file": "day6-read-rust-atomics-and-locks_230517",
+    "excerpt": "Immutable borrowing(&) + Mutable borrowing(&mut) = fully prevent data races"
+  },
+  {
     "title": "[Day5] Read Rust Atomics and Locks",
     "createdDate": "2023-05-11",
     "categories": [
