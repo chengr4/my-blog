@@ -25,7 +25,7 @@ ALTER TABLE "account" ADD CONSTRAINT "account_owner_currency_unique" UNIQUE ("ow
 
 在具有多帳戶功能的系統的資料庫中，我們有兩個 table，一個是 User，另一個是 Account，Account 的作用是儲存金錢，並且支援多種幣別。我們希望一個 User 能有多個 Account，於是有了以下設計：
 
-![Figure 1](../../images/figure_1_230521.png)
+![Figure 1](https://github.com/chengr4/my-blog/blob/000c08b349a7093dcde9f899e4120e32f8993b89/data/images/figure_1_230521.png)
 
 我們可以以下 Command 來達到一對多的目的：
 
