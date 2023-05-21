@@ -4,6 +4,7 @@
 
 - [x] Add code highlighting
 - [ ] Add analytics (google analytics)?
+- [ ] Fix image issue
 
 ## Logs
 
