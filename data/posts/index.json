@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day7] Read Rust Atomics and Locks - Interior Mutability",
+    "createdDate": "2023-05-22",
+    "categories": [
+      "cs"
+    ],
+    "file": "day7-read-rust-atomics-and-locks-interior-mutability_230522",
+    "excerpt": "Interior mutability only bends the rules of shared borrowing to allow mutation when shared"
+  },
+  {
     "title": "[沒遇過就不會] 避免資料庫的重複貨幣帳戶",
     "createdDate": "2023-05-21",
     "categories": [
