@@ -1,4 +1,4 @@
-# [Day6] Read Rust Atomics and Locks - Interior Mutability
+# [Day7] Read Rust Atomics and Locks - Interior Mutability
 
 > by Mara Bos
 
