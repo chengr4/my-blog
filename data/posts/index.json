@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day8] Read Rust Atomics and Locks - Cell, RefCell",
+    "createdDate": "2023-05-24",
+    "categories": [
+      "cs"
+    ],
+    "file": "day8-read-rust-atomics-and-locks-interior-cell-refcell_230524",
+    "excerpt": "`std::cell::Cell<T>`, `std::cell::RefCell`"
+  },
+  {
     "title": "[Day7] Read Rust Atomics and Locks - Interior Mutability",
     "createdDate": "2023-05-22",
     "categories": [
