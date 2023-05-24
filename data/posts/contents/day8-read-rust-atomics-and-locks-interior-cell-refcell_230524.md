@@ -21,7 +21,7 @@ Ans: Threads following the common borrowing rules makes communication between ea
 
 - `std::cell::Cell<T>`
 - If `T` is `Copy`, it allows you to copy the value out
-- Or replace the value with another value as a whole (not allow borrow its content)
+- Or replace the value with another value as a whole (not allow to borrow its content)
 - It can only be used within a single thread
 - `Cell` has interior mutability
 
@@ -48,14 +48,13 @@ fn f(a: &Cell<i32>, b: &Cell<i32>) {
         x(); // might happen, because Because a Cell<i32> has interior mutability
     }
 }
-
 ```
 
-Since `Cell` can’t directly let us borrow the value it holds, we need to move a value out (leaving something in its place), modify it, then put it back, to mutate its contents:
+In addition, Since `Cell` can’t directly let us borrow the value it holds, we need to move a value out (leaving something in its place), modify it, then put it back, to mutate its contents:
 
 ```rust
 fn f(v: &Cell<Vec<i32>>) {
-    let mut v2 = v.take(); // Replaces the contents of the Cell with an empty Vec ((leaving something in its place))
+    let mut v2 = v.take(); // Replaces the contents of the Cell with an empty Vec (leaving something in its place)
     v2.push(1);
     v.set(v2); // Put the modified Vec back
 }
@@ -64,9 +63,7 @@ fn f(v: &Cell<Vec<i32>>) {
 ### RefCell
 
 - `std::cell::RefCell`
-- Unlike `Cell`, it allows you to borrow its contents (call `borrow() or borrow_mut(
-  
-)`)
+- Unlike `Cell`, it allows you to borrow its contents (call `borrow()` or `borrow_mut()`)
 
     ```rust
     use std::cell::RefCell;
@@ -75,8 +72,9 @@ fn f(v: &Cell<Vec<i32>>) {
         v.borrow_mut().push(1); // We can modify the `Vec` directly.
     }
     ```
+
 - It has a counter for outstanding (未處理的) borrows
-- - It can only be used within a single thread
+- It can only be used within a single thread
 
 ---
 
