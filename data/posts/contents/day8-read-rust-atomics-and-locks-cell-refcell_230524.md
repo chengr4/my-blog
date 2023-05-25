@@ -1,4 +1,4 @@
-# [Day8] Read Rust Atomics and Locks - Cell, RefCell
+# [Day8] Read Rust Atomics and Locks - Cell, RefCell
 
 > by Mara Bos
 
