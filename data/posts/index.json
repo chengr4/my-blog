@@ -1,15 +1,24 @@
 [
   {
-    "title": "[Day8] Read Rust Atomics and Locks - Cell, RefCell",
+    "title": "[Day9] Read Rust Atomics and Locks - Mutex, RwLock, Atomics and UnsafeCell",
+    "createdDate": "2023-05-25",
+    "categories": [
+      "cs"
+    ],
+    "file": "day9-read-rust-atomics-and-locks-mutex-rwLock-atomics-unsafeCell_230525",
+    "excerpt": "A `Mutex` is very similar to `RwLock`, but it only allows exclusive borrows"
+  },
+  {
+    "title": "[Day8] Read Rust Atomics and Locks - Cell, RefCell",
     "createdDate": "2023-05-24",
     "categories": [
       "cs"
     ],
-    "file": "day8-read-rust-atomics-and-locks-interior-cell-refcell_230524",
+    "file": "day8-read-rust-atomics-and-locks-cell-refcell_230524",
     "excerpt": "`std::cell::Cell<T>`, `std::cell::RefCell`"
   },
   {
-    "title": "[Day7] Read Rust Atomics and Locks - Interior Mutability",
+    "title": "[Day7] Read Rust Atomics and Locks - Interior Mutability",
     "createdDate": "2023-05-22",
     "categories": [
       "cs"
@@ -27,7 +36,7 @@
     "excerpt": "在具有多帳戶功能的系統中，一個 User 可以有多個 Account ，而在 Account table 中又可以儲存多種幣別 (USD, NTD…) 。我們可以利用 `composite index` 加上 `unique` 的特性， 令 User 避免持有相同的幣別的 Account"
   },
   {
-    "title": "[Day6] Read Rust Atomics and Locks",
+    "title": "[Day6] Read Rust Atomics and Locks",
     "createdDate": "2023-05-17",
     "categories": [
       "cs"
@@ -36,7 +45,7 @@
     "excerpt": "Immutable borrowing(&) + Mutable borrowing(&mut) = fully prevent data races"
   },
   {
-    "title": "[Day5] Read Rust Atomics and Locks",
+    "title": "[Day5] Read Rust Atomics and Locks",
     "createdDate": "2023-05-11",
     "categories": [
       "cs"
@@ -45,7 +54,7 @@
     "excerpt": "Some ways to share ownership to threads: `static`, `Box::leak(Box::new([1, 2, 3]));`, `Arc`"
   },
   {
-    "title": "[Day4] Read Rust Atomics and Locks",
+    "title": "[Day4] Read Rust Atomics and Locks",
     "createdDate": "2023-05-08",
     "categories": [
       "cs"
