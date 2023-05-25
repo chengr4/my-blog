@@ -29,7 +29,7 @@
 - An `RwLock` or reader-writer lock is the concurrent version of a `RefCell`
 - An `RwLock<T>` holds a `T` and tracks any outstanding borrows.
 - When conflicting borrows happen, it does not panic. Instead, it blocks the current thread (​putting it to sleep) and waits for conflicting borrows to disappear.
-Borrowing the contents of an `RwLock` is called **locking**
+- Borrowing the contents of an `RwLock` is called **locking**
 - `RwLock` keeps tracking shared and exclusive borrows
 - A `Mutex` is very similar to `RwLock`, but it only allows exclusive borrows.
 
@@ -41,7 +41,7 @@ Borrowing the contents of an `RwLock` is called **locking**
 
 ### UnsafeCell
 
-- An UnsafeCell is the primitive building block (scope) for interior mutability
+- An `UnsafeCell` is the primitive building block (scope) for interior mutability
 - Can only be used in `unsafe` block
 - Commonly, an `UnsafeCell` is wrapped in another type that provides safety through a limited interface, such as `Cell` or `Mutex`. 
 - All types with interior mutability are built on top of `UnsafeCell`.
