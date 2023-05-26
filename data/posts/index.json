@@ -27,12 +27,13 @@
     "excerpt": "Interior mutability only bends the rules of shared borrowing to allow mutation when shared"
   },
   {
-    "title": "[沒遇過就不會] 避免資料庫的重複貨幣帳戶",
+    "title": "[沒遇過就不會之一] 避免資料庫的重複貨幣帳戶",
     "createdDate": "2023-05-21",
+    "editedDate": "2023-05-26",
     "categories": [
       "cs"
     ],
-    "file": "no-experience-no-knowledge-avoiding-duplicate-currency-accounts-in-a-database_230521",
+    "file": "no-experience-no-knowledge-1-avoiding-duplicate-currency-accounts-in-a-database_230521",
     "excerpt": "在具有多帳戶功能的系統中，一個 User 可以有多個 Account ，而在 Account table 中又可以儲存多種幣別 (USD, NTD…) 。我們可以利用 `composite index` 加上 `unique` 的特性， 令 User 避免持有相同的幣別的 Account"
   },
   {
