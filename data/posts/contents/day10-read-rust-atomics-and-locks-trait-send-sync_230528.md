@@ -9,10 +9,10 @@
 ### Cell
 
 - `std::cell::Cell<T>`
-- If `T` is Copy, it allows you to copy the value out
+- If `T` is `Copy`, it allows you to copy the value out
 - Or replace the value with another value as a whole (not allow to borrow its content)
 - It can only be used within a single thread
-- Cell has interior mutability
+- `Cell` has interior mutability
 
 ## Notes
 
@@ -28,11 +28,11 @@ For example, `Arc<i32>` is `Send`, but `Rc<i32>` is not.
 
 **Sync**
 
-A type is `Sync` if it can be shared with another thread. In other words, a type `T` is `Sync` if and only if a shared reference to that type, `&T`, is `Send`.
+A type is `Sync` if it can be shared with another thread. In other words, a type `T` is `Sync` if and only if a shared reference to that type `&T` is `Send`.
 
 For example, an `i32` is `Sync`, but a `Cell<i32>` is not. (A `Cell<i32>` is `Send`, however.)
 
->  because a shared reference `&i32` to an `i32` can be safely sent to another thread. The `i32` type itself is considered thread-safe for sharing between threads -- ChatGTP (2023.05)
+> Because a shared reference `&i32` to an `i32` can be safely sent to another thread. The `i32` type itself is considered thread-safe for sharing between threads -- ChatGTP (2023.05)
 
 - All primitive types such as `i32`, `bool`, and `str` are both `Send` and `Sync`.
 - A `struct` with fields that are all `Send` and `Sync`, is itself also `Send` and `Sync`. (aka auto traits)
@@ -60,7 +60,7 @@ struct X {
 
 ## Opt in and out Send and Sync
 
-Opt in:
+- Opt in:
 
 ```rust
 struct X {
@@ -71,7 +71,7 @@ unsafe impl Send for X {} // requires the unsafe keyword
 unsafe impl Sync for X {} // requires the unsafe keyword
 ```
 
-Opt out: Use `PhantomData<T>`
+- Opt out: Use `PhantomData<T>`
 
 ---
 
