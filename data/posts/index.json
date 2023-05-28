@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day10] Read Rust Atomics and Locks - Trait Send and Sync",
+    "createdDate": "2023-05-28",
+    "categories": [
+      "cs"
+    ],
+    "file": "day10-read-rust-atomics-and-locks-trait-send-sync_230528",
+    "excerpt": "Rust uses trait `Send` and `Sync` to keep track of which types can be safely used across threads. With them, the compiler can check for you, so you can use these types without having to use `unsafe` blocks."
+  },
+  {
     "title": "[Day9] Read Rust Atomics and Locks - Mutex, RwLock, Atomics and UnsafeCell",
     "createdDate": "2023-05-25",
     "categories": [
