@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day11] Read Rust Atomics and Locks - Rust's Mutex",
+    "createdDate": "2023-05-29",
+    "categories": [
+      "cs"
+    ],
+    "file": "day11-read-rust-atomics-and-locks-rusts-mutex_230529",
+    "excerpt": "While using a mutex can ensure serialized execution, it also negates the advantages of parallelism"
+  },
+  {
     "title": "[Day10] Read Rust Atomics and Locks - Trait Send and Sync",
     "createdDate": "2023-05-28",
     "categories": [
