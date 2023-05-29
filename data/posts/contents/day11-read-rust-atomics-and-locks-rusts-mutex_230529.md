@@ -24,10 +24,10 @@ The most commonly used tool for sharing (mutable) data between threads is a mute
 Conceptually,
 
 - A mutex has only two states: locked and unlocked
-- When a thread locks an unlocked mutex, the mutex is marked as locked and the same thread can immediately continue
-- When a thread attempts to lock an already locked mutex, that operation will block and is put to sleep
+- When a thread locks an unlocked mutex, the mutex is marked as locked and the same thread can immediately continue.
+- When a thread attempts to lock an already locked mutex, that operation will block and is put to sleep.
 - Unlocking is only possible to be done by the same thread that locked it.
-- Unlocking will wake up one of those waiting threads, after mutex is unlocked
+- Unlocking will wake up one of those waiting threads, after mutex is unlocked.
 - The only thread having the mutex locked can access the data
 
 ### Rust’s Mutex
