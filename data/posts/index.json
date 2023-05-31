@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day12] Read Rust Atomics and Locks - Lock Poisoning",
+    "createdDate": "2023-05-31",
+    "categories": [
+      "cs"
+    ],
+    "file": "day12-read-rust-atomics-and-locks-lock-poisoning_230531",
+    "excerpt": "A Mutex in Rust gets marked as poisoned when a thread panics while holding the lock."
+  },
+  {
     "title": "[Day11] Read Rust Atomics and Locks - Rust's Mutex",
     "createdDate": "2023-05-29",
     "categories": [
