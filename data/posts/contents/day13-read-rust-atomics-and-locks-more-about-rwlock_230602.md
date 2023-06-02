@@ -1,19 +1,23 @@
 # [Day13] Read Rust Atomics and Locks - More about Reader-Writer Lock
 
-> by Mara Bos
+> by Mara
+
+> From: Reader-Writer Lock
+
+> To: Mutexes in Other Languages
 
 > At Topics: Chapter 1. Basics of Rust Concurrency
 
 ## Recalls
 
-- A type is `Send` if it can be sent to another thread. In other words, if ownership of a value of that type can be transferred to another thread.
-- A type is `Sync` if it can be shared with another thread. In other words, a type `T` is `Sync` if and only if a shared reference to that type `&T` is `Send`.
+- Trait `Send`: A type is `Send` if it can be sent to another thread. In other words, if ownership of a value of that type can be transferred to another thread.
+- Trait `Sync`: A type is `Sync` if it can be shared with another thread. In other words, a type `T` is `Sync` if and only if a shared reference to that type `&T` is `Send`.
 
 ## Notes
 
 ### Reader-Writer Lock
 
-A mutex is only concerned with exclusive access. The `MutexGuard` will always provide us an exclusive reference (&mut T) to the protected data, even if we only wanted to look at the data and and a shared reference (&T) would have benen enough
+A mutex is only concerned with exclusive access. The `MutexGuard` will always provide us an exclusive reference (&mut T) to the protected data, even if we only wanted to look at the data and and a shared reference (&T) would have been enough.
 
 A reader-writer understands the difference between exclusive and shared access, and can provide either.
 
@@ -27,18 +31,18 @@ A reader-writer has tree states:
 
 It is commonly used for data that is often read by multiple threads, but only updated once in a while.
 
-#### Rust's Reader-Writer Lock
+### Rust's Reader-Writer Lock
 
 - `std::sync::RwLock<T>`
-- Instead of `lock()`, it has a `read()` and `write()` method
+- Instead of a `lock()`, it has a `read()` and a `write()` method
 - Two guard types: `RwLockReadGuard` (for readers), `RwLockWriteGuard` (for writers)
 - Both `Mutex<T>` and `RwLock<T>` require `T` to be `Send` (able be used to send a `T` to another thread)
 - `RwLock<T>`'s `T` is also `Sync`
 - The Rust standard library provides only one general purpose `RwLock` type, but its implementation depends on the OS
 
-### Mutexes vs Other Languages
+### Mutexes in Rust vs Other Languages
 
-- Rust’s `Mutex<T>` **contains** the data it is protecting. In C++, for example, `std::mutex` does not contain the data it protects, nor does it even know what it is protecting.
+- Rust’s `Mutex<T>` **contains** the data it is protecting. However, in C++, for example, `std::mutex` does not contain the data it protects, nor does it even know what it is protecting.
 
 ---
 
