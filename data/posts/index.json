@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day13] Read Rust Atomics and Locks - More about Reader-Writer Lock",
+    "createdDate": "2023-06-02",
+    "categories": [
+      "cs"
+    ],
+    "file": "day13-read-rust-atomics-and-locks-more-about-rwlock_230602",
+    "excerpt": "A reader-writer understands the difference between exclusive and shared access, and can provide either."
+  },
+  {
     "title": "[Day12] Read Rust Atomics and Locks - Lock Poisoning",
     "createdDate": "2023-05-31",
     "categories": [
