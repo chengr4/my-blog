@@ -1,6 +1,6 @@
 # [Day13] Read Rust Atomics and Locks - More about Reader-Writer Lock
 
-> by Mara
+> by Mara Bos
 
 > From: Reader-Writer Lock
 
