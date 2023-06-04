@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day14] Read Rust Atomics and Locks - Thread Parking and condition variables",
+    "createdDate": "2023-06-04",
+    "categories": [
+      "cs"
+    ],
+    "file": "day14-read-rust-atomics-and-locks-thread-parking-condition-variables_230604",
+    "excerpt": "When data is mutated by multiple threads, there are many situations where they would need to wait for some event, for some condition about the data to become true."
+  },
+  {
     "title": "[Day13] Read Rust Atomics and Locks - More about Reader-Writer Lock",
     "createdDate": "2023-06-02",
     "editedDate": "2023-06-03",
