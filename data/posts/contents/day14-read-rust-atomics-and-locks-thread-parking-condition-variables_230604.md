@@ -26,7 +26,7 @@ At this point, we need *thread parking* or *condition variables*
 - `std::thread::park()`
 - A thread can park itself, which puts it to sleep
 - Another thread can unpark the parked thread, waking it up from its nap
-- Unpark requests don’t stack up: Calling uppark two times only has one time's effect
+- Unpark requests don’t stack up: Calling unpark two times only has one time's effect
 - The request to unpark is recorded, even if it is called before the thread parks itself
 
 > Use `std::thread::current()` or `JoinHandle` returned by `spawn` of the the parked thread and call `unpark()`
@@ -70,8 +70,8 @@ fn main() {
 
 - Two basic operations: `wait` and `notify`
 - `std::sync::Condvar`
-- Condvar only works when used together with a Mutex
-- Besides, normally, a Condvar is only ever used together with a single Mutex.
+- `Condvar` only works when used together with a Mutex
+- Besides, normally, a `Condvar` is only ever used together with a single Mutex.
 
 Eg:
 
