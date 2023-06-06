@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day15] Read Rust Atomics and Locks - Intro of Atmoics",
+    "createdDate": "2023-06-06",
+    "categories": [
+      "cs"
+    ],
+    "file": "day15-read-rust-atomics-and-locks-introOf-atomics_230606",
+    "excerpt": "Atomic operations allow for different threads to safely read and modify the same variable"
+  },
+  {
     "title": "[Day14] Read Rust Atomics and Locks - Thread Parking and condition variables",
     "createdDate": "2023-06-04",
     "categories": [
