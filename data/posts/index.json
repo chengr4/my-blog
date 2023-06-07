@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day16] Read Rust Atomics and Locks - Atomic Load and Store Operations 1",
+    "createdDate": "2023-06-07",
+    "categories": [
+      "cs"
+    ],
+    "file": "day16-read-rust-atomics-and-locks-atomic-load-and-store-oprations1_230606",
+    "excerpt": "Some common use cases: a stop flag, process reporting"
+  },
+  {
     "title": "[Day15] Read Rust Atomics and Locks - Intro of Atmoics",
     "createdDate": "2023-06-06",
     "categories": [
