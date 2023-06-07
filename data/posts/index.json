@@ -5,7 +5,7 @@
     "categories": [
       "cs"
     ],
-    "file": "day16-read-rust-atomics-and-locks-atomic-load-and-store-oprations1_230606",
+    "file": "day16-read-rust-atomics-and-locks-atomic-load-and-store-oprations1_230607",
     "excerpt": "Some common use cases: a stop flag, process reporting"
   },
   {
