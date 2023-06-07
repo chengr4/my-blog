@@ -33,7 +33,6 @@ impl AtomicI32 {
 
 - Some common use cases: a stop flag, process reporting
 
-
 ---
 
 ## References
