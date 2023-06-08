@@ -1,10 +1,10 @@
-# [Day16] Read Rust Atomics and Locks - Atomic Load and Store Operations 1
+# [Day16] Read Rust Atomics and Locks - Atomic Load and Store Operations
 
 > by Mara Bos
 
 > From: Atomic Load and Store Operations
 
-> To: Synchronization
+> To: Example: Lazy Initialization
 
 > At Topics: Chapter 2. Atomics
 
@@ -31,7 +31,41 @@ impl AtomicI32 {
 }
 ```
 
-- Some common use cases: a stop flag, process reporting
+- Some common use cases: a stop flag, process reporting, Lazy Initialization
+
+Example of Lazy Initialization:
+
+```rust
+use std::sync::atomic::AtomicU64;
+use std::sync::atomic::Ordering::Relaxed;
+use std::thread;
+use std::time::Duration;
+
+fn get_x() -> u64 {
+    // X is Allocated once and persist throughout the entire program's execution
+    static X: AtomicU64 = AtomicU64::new(0);
+    let mut x = X.load(Relaxed);
+    // only the first thread runs at the first time
+    if x == 0 {
+        x = calculate_x(); // calculate 0
+        X.store(x, Relaxed); // make it available for future use
+    }
+    x
+}
+
+fn calculate_x() -> u64 {
+    thread::sleep(Duration::from_secs(1));
+    123
+}
+
+fn main() {
+    dbg!(get_x());
+    dbg!(get_x());
+}
+```
+
+- The code above may cause "race" (not "data race")
+- The Rust standard library provides exactly a functionality to wait for the first thread through `std::sync::Once` and `std::sync::OnceLock`.
 
 ---
 
