@@ -4,9 +4,13 @@
 
 > From: Fetch-and-Modify Operations
 
-> To: Example: Lazy Initialization
+> To: Example: Example: ID Allocation
 
 > At Topics: Chapter 2. Atomics
+
+## Prerequisites
+
+By default, when a panic occurs, the program starts *unwinding*, which means Rust walks back up the stack and cleans up the data from each function it encounters. However, this walking back and cleanup is a lot of work. Rust, therefore, allows you to choose the alternative of immediately *aborting*, which ends the program without cleaning up (OS will take it over).
 
 ## Recalls
 
@@ -39,6 +43,8 @@ fn main() {
     let c = a.load(Relaxed); // c = 123
 }
 ```
+
+- There are three common solutions to prevent overflows: `std::process::abort`, `fetch_sub` to decrement the counter again before panicking, `compare-and-exchange operations`
 
 #### Progress Reporting from Multiple Threads
 
@@ -81,11 +87,17 @@ fn main() {
 
 - We don’t know in which order the threads will increment `num_done`, but as the addition is **atomic**, we don’t have to worry about anything and can be sure it will be exactly 100 when all threads are done.
 
+## Do Not Understand
+
+[Topic: Example: ID Allocation] Now, the assert statement will panic after a thousand calls. However, this happens after the atomic add operation already happened, meaning that NEXT_ID has already been incremented to 1001 when we panic. If another thread then calls the function, it’ll increment it to 1002 before panicking, and so on. Although it might take significantly longer, we’ll run into the same problem after 4,294,966,296 panics when NEXT_ID will overflow to zero again.
+
+Although it might take significantly longer, we’ll run into the same problem after 4,294,966,296 panics when NEXT_ID will overflow to zero again. <= What does this mean?
+
 ---
 
 ## References
 
 - [Rust Atomics and Locks by Mara Bos](https://marabos.nl/atomics/)
-- [Generic Types, Traits, and Lifetimes - The Rust Programming Language (rust-lang.org)](https://doc.rust-lang.org/stable/book/ch10-00-generics.html)
+- [Unwinding the Stack or Aborting in Response to a Panic](https://doc.rust-lang.org/stable/book/ch09-01-unrecoverable-errors-with-panic.html#unwinding-the-stack-or-aborting-in-response-to-a-panic)
 - [並行程式設計](https://hackmd.io/@sysprog/concurrency/https%3A%2F%2Fhackmd.io%2F%40sysprog%2FS1AMIFt0D)
 - [Code examples of Rust Atomics and Locks.](https://github.com/m-ou-se/rust-atomics-and-locks)
