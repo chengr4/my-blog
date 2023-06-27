@@ -46,7 +46,7 @@ fn main() {
     > wrapping: Make the overflow be the minimum representable value
 - There are three common solutions to prevent overflows: `std::process::abort`, `fetch_sub` to decrement the counter again before panicking, `compare-and-exchange operations` (the only truly correct one)
 
-#### Progress Reporting from Multiple Threads
+#### Example: Progress Reporting from Multiple Threads
 
 ```rust
 use std::sync::atomic::AtomicUsize;

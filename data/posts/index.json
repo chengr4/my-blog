@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day18] Read Rust Atomics and Locks - Atomic Compare-and-Exchange Operations",
+    "createdDate": "2023-06-27",
+    "categories": [
+      "cs"
+    ],
+    "file": "day18-read-rust-atomics-and-locks-atomic-compare-and-exchange-oprations_230627",
+    "excerpt": "Compare-and-Exchange checks if the atomic value is equal to a given value, and only if that is the case does it replace it with a new value"
+  },
+  {
     "title": "[Day17] Read Rust Atomics and Locks - Atomic Fetch-and-Modify Operations",
     "createdDate": "2023-06-19",
     "editedDate":"2023-06-27",
