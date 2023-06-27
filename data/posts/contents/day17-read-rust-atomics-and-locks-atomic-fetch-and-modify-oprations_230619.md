@@ -26,10 +26,6 @@ By default, when a panic occurs, the program starts *unwinding*, which means Rus
 - "Fetch-and-Modify" is one operation
 - These operations `modify` the atomic variable, but also `load (fetch)` the original value, **as a single atomic operation**.
 - Common use: `fetch_add`, `fetch_sub`
-- `fetch_add` and `fetch_sub` implement wrapping behavior for overflows
-    > overflow: Incrementing a value past the maximum representable value
-
-    > wrapping: Make the overflow be the minimum representable value
 
 Eg.
 
@@ -44,7 +40,11 @@ fn main() {
 }
 ```
 
-- There are three common solutions to prevent overflows: `std::process::abort`, `fetch_sub` to decrement the counter again before panicking, `compare-and-exchange operations`
+- `fetch_add` and `fetch_sub` implement wrapping behavior for overflows
+    > overflow: Incrementing a value past the maximum representable value
+
+    > wrapping: Make the overflow be the minimum representable value
+- There are three common solutions to prevent overflows: `std::process::abort`, `fetch_sub` to decrement the counter again before panicking, `compare-and-exchange operations` (the only truly correct one)
 
 #### Progress Reporting from Multiple Threads
 
