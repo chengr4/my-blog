@@ -37,7 +37,7 @@ fn get_x() -> u64 {
 }
 ```
 
-- Better to work with `std::sync::Once` and `std::sync::OnceLock`.
+- Better to work with `std::sync::Once` and `std::sync::OnceLock`
 
 ## Notes
 
@@ -141,13 +141,12 @@ fn get_key() -> u64 {
 }
 ```
 
-- Better to work with `std::sync::Once` and `std::sync::OnceLock`.
+- Better to work with `std::sync::Once` and `std::sync::OnceLock`
 
 ---
 
 ## References
 
 - [Rust Atomics and Locks by Mara Bos](https://marabos.nl/atomics/)
-- [Unwinding the Stack or Aborting in Response to a Panic](https://doc.rust-lang.org/stable/book/ch09-01-unrecoverable-errors-with-panic.html#unwinding-the-stack-or-aborting-in-response-to-a-panic)
 - [並行程式設計](https://hackmd.io/@sysprog/concurrency/https%3A%2F%2Fhackmd.io%2F%40sysprog%2FS1AMIFt0D)
 - [Code examples of Rust Atomics and Locks.](https://github.com/m-ou-se/rust-atomics-and-locks)
