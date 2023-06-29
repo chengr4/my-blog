@@ -31,7 +31,7 @@ fn f(a: &mut i32, b: &mut i32) {
 }
 ```
 
-### Optimization with Mutiple threads
+### Optimization with Multiple threads
 
 The optimization performed by processors and compilers does not take other threads into consideration. Therefore, when working with atomics (data shared between threads), we have to explicitly tell the compiler and processor what they can and can’t do.
 
