@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day19] Read Rust Atomics and Locks - Memory Reordering and Optimizations",
+    "createdDate": "2023-06-29",
+    "categories": [
+      "cs"
+    ],
+    "file": "day19-read-rust-atomics-and-locks-memory-reordering-and-optimizations_230629",
+    "excerpt": "Processors and compilers perform all sorts of tricks to make your programs run as fast as possible"
+  },
+  {
     "title": "[Day18] Read Rust Atomics and Locks - Atomic Compare-and-Exchange Operations",
     "createdDate": "2023-06-27",
     "categories": [
