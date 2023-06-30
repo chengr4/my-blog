@@ -4,5 +4,5 @@ export interface Post {
   editedDate?: string;
   categories: string[];
   file: string;
-  excerpt: string;
+  excerpt?: string;
 }

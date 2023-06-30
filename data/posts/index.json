@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day20] Read Rust Atomics and Locks - The Memory Model",
+    "createdDate": "2023-06-30",
+    "categories": [
+      "cs"
+    ],
+    "file": "day20-read-rust-atomics-and-locks-the-memory-model_230630"
+  },
+  {
     "title": "[Day19] Read Rust Atomics and Locks - Memory Reordering and Optimizations",
     "createdDate": "2023-06-29",
     "categories": [
