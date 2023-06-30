@@ -10,9 +10,9 @@
 
 ## Notes
 
-Why we need the memory model?
+Q: Why we need the memory model?
 
-The different memory ordering options have a strict formal definition. To avoid being tied to the specifics of particular processor architectures, it is defined based on an abstract memory model.
+A: The different memory ordering options have a strict formal definition. To avoid being tied to the specifics of particular processor architectures, it is defined based on an abstract memory model.
 
 - Rust’s memory model, which is mostly copied from C++
 - One of the examples of memory model: concurrent atomic stores is allowed, but concurrent non-atomic stores to the same variable is however a data race (undefined behavior).
