@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day21] Read Rust Atomics and Locks - Happens-Before Relationship",
+    "createdDate": "2023-07-04",
+    "categories": [
+      "cs"
+    ],
+    "file": "day21-read-rust-atomics-and-locks-happens-before-relationship_230704",
+    "excerpt": "one thing is guaranteed to happen before another thing"
+  },
+  {
     "title": "[Day20] Read Rust Atomics and Locks - The Memory Model",
     "createdDate": "2023-06-30",
     "categories": [
