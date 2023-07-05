@@ -22,7 +22,7 @@ The memory model does not talk about a concrete computer behavior. Instead, it o
 
 Eg.
 
-A thread is executing `f();g();` => `f()` "*happens-before*" `g()`
+The basic happens-before rule is that everything that happens within **the same thread** happens *in order*. Eg. if a thread is executing `f(); g();`, then `f()` happens-before `g()`.
 
 > Between threads, *happens-before relationships* only occur in a few specific cases:
 > - Spawning and joining a thread
