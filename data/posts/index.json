@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day22] Read Rust Atomics and Locks - Relaxed Ordering",
+    "createdDate": "2023-07-07",
+    "categories": [
+      "cs"
+    ],
+    "file": "day22-read-rust-atomics-and-locks-relaxed-ordering-_230707",
+    "excerpt": "Atomic operations using relaxed memory ordering promises from the perspective of every other threads all modifications of the same atomic variable happen in a same order"
+  },
+  {
     "title": "[Day21] Read Rust Atomics and Locks - Happens-Before Relationship",
     "createdDate": "2023-07-04",
     "editedDate":"2023-07-05",
