@@ -8,7 +8,7 @@
 
 > At Topics: Chapter 3. Memory Ordering
 
-## Recalls
+## Recaps
 
 ### The Memory Model
 

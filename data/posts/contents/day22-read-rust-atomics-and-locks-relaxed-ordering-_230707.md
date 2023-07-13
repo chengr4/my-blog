@@ -8,7 +8,7 @@
 
 > At Topics: Chapter 3. Memory Ordering
 
-## Recalls
+## Recaps
 
 When working with atomics (mutating data that's shared between threads), we have to explicitly tell the compiler and processor what they can and can't do with our atomic operations by the `std::sync::atomic::Ordering` enum.
 

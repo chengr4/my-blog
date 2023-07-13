@@ -9,7 +9,7 @@
 > At Topics: Chapter 2. Atomics
 
 
-## Recalls
+## Recaps
 
 ### Fetch-and-Modify Operations
 
