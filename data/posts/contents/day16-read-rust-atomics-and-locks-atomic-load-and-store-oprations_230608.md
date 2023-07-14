@@ -33,7 +33,11 @@ impl AtomicI32 {
 
 - Some common use cases: a stop flag, process reporting, Lazy Initialization
 
-Example of Lazy Initialization:
+### Example of Lazy Initialization:
+
+There is a **runtime constant value** which we don't expect to change. Therefore, we can **request** or **calculate** it only the first time we need it, and then remember the result.
+
+> Runtime constant value: eg. the version of the OS, the total amount of memory, the 400th PI or values from a file
 
 ```rust
 use std::sync::atomic::AtomicU64;
