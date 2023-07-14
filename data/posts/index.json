@@ -1,11 +1,20 @@
 [
   {
+    "title": "[Day23] Read Rust Atomics and Locks - Release and Acquire Ordering",
+    "createdDate": "2023-07-14",
+    "categories": [
+      "cs"
+    ],
+    "file": "day23-read-rust-atomics-and-locks-release-and-acquire-ordering_230714",
+    "excerpt": "Target: to form a happens-before relationship between threads"
+  },
+  {
     "title": "[Day22] Read Rust Atomics and Locks - Relaxed Ordering",
     "createdDate": "2023-07-07",
     "categories": [
       "cs"
     ],
-    "file": "day22-read-rust-atomics-and-locks-relaxed-ordering-_230707",
+    "file": "day22-read-rust-atomics-and-locks-relaxed-ordering_230707",
     "excerpt": "Atomic operations using relaxed memory ordering promises from the perspective of every other threads all modifications of the same atomic variable happen in a same order"
   },
   {
