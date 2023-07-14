@@ -39,6 +39,7 @@
   {
     "title": "[Day18] Read Rust Atomics and Locks - Atomic Compare-and-Exchange Operations",
     "createdDate": "2023-06-27",
+    "editedDate":"2023-07-14",
     "categories": [
       "cs"
     ],

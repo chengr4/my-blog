@@ -120,7 +120,7 @@ fn main() {
 
 ### Example: Lazy One-Time Initialization
 
-- While [Lazy Initialization](https://marabos.nl/atomics/atomics.html#example-lazy-init) is for a constant (the same result each time), Lazy One-Time Initialization is for a dynamic value. Eg. a randomly encryption key which needs to be unique every time the program is run, but stays constant within a process.
+- While [Lazy Initialization](https://marabos.nl/atomics/atomics.html#example-lazy-init) is for a runtime constant (the same result each time), Lazy One-Time Initialization is for a value getting initialized to a different value each single run of the program. Eg. a randomly encryption key which needs to be unique every time the program is run, but stays constant within a process.
 
 ```rust
 fn get_key() -> u64 {
