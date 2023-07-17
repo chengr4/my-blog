@@ -59,18 +59,19 @@ Which are:
 
 ## Notes
 
-- Release and acquire memory ordering work together to
-- Target: to form a happens-before relationship between threads.
+- Release and Acquire memory ordering work together to
+- Target: to form a happens-before relationship between threads
 - "Release memory ordering" applies to store operations
-- "Acquire memory ordering" applies to load operations.
-- "The store (Release) and everything before it", happened before "the load (acquire) and everything after it".
+- "Acquire memory ordering" applies to load operations
+- "The store (Release) and everything before it" happened before "the load (acquire) and everything after it".
 
-> - one thread releases data == storing some value to an atomic variable == unlock a mutex
-> - one thread acquires the same data == loading that value == lock a mutex
+> - One thread releases data == storing some value to an atomic variable == unlock a mutex
+> - One thread acquires the same data == loading that value == lock a mutex
 
 Eg.
 
 ```rust
+// source: https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/examples/ch3-06-release-acquire.rs
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::AtomicU64;
 use std::sync::atomic::Ordering::Relaxed;
@@ -103,6 +104,7 @@ fn main() {
 Here is a simulation of the mutex pattern:
 
 ```rust
+// source: https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/examples/ch3-08-lock.rs
 use std::sync::atomic::AtomicBool;
 use std::sync::atomic::Ordering::{Acquire, Relaxed, Release};
 use std::thread;
@@ -135,6 +137,8 @@ fn main() {
 ```
 
 Important to understand here is that: the `{ DATA.push('!') }` is happened-before `Release` and is happened-before `Acquire` (next `compare-and-exchange`) and is happened-before the next `{ DATA.push('!') }`
+
+See the figure: https://marabos.nl/atomics/images/raal_0302.png
 
 ### Example: Lazy Initialization with Indirection
 
@@ -185,7 +189,7 @@ fn main() {
 }
 ```
 
->  Since we’re not only sharing the atomic variable containing the pointer, but also the data it points to, instead of relaxed memory ordering, we should use release and acquire ordering.
+> Since we’re not only sharing the atomic variable containing the pointer, but also the data it points to, instead of relaxed memory ordering, we should use release and acquire ordering.
 
 See the figure:
 

@@ -47,7 +47,7 @@ fn get_x() -> u64 {
 
 Eg.
 
-```Rust
+```rust
 use std::sync::atomic::AtomicU32;
 use std::sync::atomic::Ordering::Relaxed;
 
