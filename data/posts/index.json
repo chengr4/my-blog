@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day24] Read Rust Atomics and Locks - Consume Ordering",
+    "createdDate": "2023-07-18",
+    "categories": [
+      "cs"
+    ],
+    "file": "day24-read-rust-atomics-and-locks-consume-ordering_230718",
+    "excerpt": "no compiler actually implements consume ordering"
+  },
+  {
     "title": "[Day23] Read Rust Atomics and Locks - Release and Acquire Ordering",
     "createdDate": "2023-07-14",
     "categories": [
