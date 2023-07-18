@@ -4,7 +4,7 @@
 
 > From: Consume Ordering, Consume Ordering
 
-> At Topics: Chapter 3. Memory Ordering
+> At Topic: Chapter 3. Memory Ordering
 
 ## Notes
 
@@ -12,11 +12,11 @@
 - Its effects are only applicable to expressions depending on the "loaded value"
     - Eg. you have `x.store(false, Release);` and all expressions like `*x`, `array[x]` or `table.lookup(x + 1)` will happen after it
 - All modern processor architectures—​consume ordering is achieved with the exact same instructions as relaxed ordering.
-- However, no compiler actually implements consume ordering and upgrades consume ordering to acquire ordering, just to be safe. See one exaple here: a compiler might be able to optimize `x + 2 - x`` to just 2, effectively dropping the dependency on x. 
+- However, no compiler actually implements consume ordering and upgrades consume ordering to acquire ordering, just to be safe. See one example here: a compiler might be able to optimize `x + 2 - x` to just `2`, effectively dropping the dependency on `x`. 
 
 > C++ 20 standard even explicitly discourages the use of consume ordering as well
 
-- In conclusion, in 2023 `Ordering::Consume` in Rust is not feasible
+- In conclusion, at lease in 2023, `Ordering::Consume` in Rust is not feasible
 
 ---
 
