@@ -6,6 +6,16 @@
 
 > At Topic: Chapter 3. Memory Ordering
 
+## Recaps
+
+When working with atomics (mutating data that's shared between threads), we have to explicitly tell the compiler and processor what they can and can't do with our atomic operations by the `std::sync::atomic::Ordering` enum.
+
+Which are:
+
+- Relaxed ordering: `Ordering::Relaxed`
+- Release and acquire ordering: `Ordering::{Release, Acquire, AcqRel}`
+- Sequentially consistent ordering: `Ordering::SeqCst`
+
 ## Notes
 
 - There is a weaker ordering than Acquire Ordering called "Consume Ordering"
