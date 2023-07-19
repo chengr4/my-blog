@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day25] Read Rust Atomics and Locks - Sequentially Consistent Ordering",
+    "createdDate": "2023-07-19",
+    "categories": [
+      "cs"
+    ],
+    "file": "day25-read-rust-atomics-and-locks-sequentially-consistent-ordering_230719",
+    "excerpt": "Each operation using SeqCst memory ordering contributes to a global order in which all operations are arranged"
+  },
+  {
     "title": "[Day24] Read Rust Atomics and Locks - Consume Ordering",
     "createdDate": "2023-07-18",
     "categories": [
