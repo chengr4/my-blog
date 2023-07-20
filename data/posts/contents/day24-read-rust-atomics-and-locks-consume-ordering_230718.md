@@ -2,7 +2,7 @@
 
 > by Mara Bos
 
-> From: Consume Ordering, Consume Ordering
+> From: Consume Ordering, To: Consume Ordering
 
 > At Topic: Chapter 3. Memory Ordering
 
