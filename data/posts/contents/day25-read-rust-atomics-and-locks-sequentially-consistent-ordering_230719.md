@@ -19,8 +19,9 @@ Which are:
 - The strongest memory ordering
 - `Ordering::SeqCst`
 - Each operation using SeqCst memory ordering contributes to a global order in which all operations are arranged
-- And the sequence of modifications to each *variable* is maintained and aligned within the overall global order:
-- Because it is strictly stronger than acquire and release memory ordering, we can use `SeqCst + Release` or `SeqCst + Acquire` and it still work fine
+- And the total order of operations on shared variables is consistent with the total modification order of each individual variable
+    - Eg. if thread A writes a value to variable X and then thread B writes another value to variable X, all other threads will observe these writes to variable X in the same order (A's write first, then B's write) as they occurred in the program's execution.
+- Because it is strictly stronger than acquire and release memory ordering, we can use `SeqCst + Release` or `SeqCst + Acquire` and it still works fine
 
 > Only when both sides of a happens-before relationship use SeqCst ordering is it guaranteed to be consistent with the single total order of SeqCst operations.
 
