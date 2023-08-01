@@ -42,9 +42,9 @@ Which are:
     ```
 
 - Using a separate fence can result in an extra processor instruction, though, which can be slightly less efficient.
-- A fence is not tied to any single atomic variable. => a single fence can be used for multiple variables at once.
-- By using fence conditionally, we can avoid unnecessory memory ordering and optimize performance
-- A SeqCst fence cannot be split into a relaxed operation and a memory fence
+- A fence is not tied to any single atomic variable => a single fence can be used for multiple variables at once.
+- By using fence conditionally, we can avoid unnecessary memory ordering and optimize performance
+- A `SeqCst` and `AcqRel` fence cannot be split into a relaxed operation and a memory fence
 
 ---
 
