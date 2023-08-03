@@ -1,4 +1,4 @@
-# [Day27] Read Rust Atomics and Locks - Common Misconceptions in memory ordering
+# [Day27] Read Rust Atomics and Locks - Something to know about memory ordering
 
 > by Mara Bos
 

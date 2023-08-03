@@ -1,11 +1,11 @@
 [
   {
-    "title": "[Day27] Read Rust Atomics and Locks - Common Misconceptions in memory ordering",
+    "title": "[Day27] Read Rust Atomics and Locks - Something to know about memory ordering",
     "createdDate": "2023-08-03",
     "categories": [
       "cs"
     ],
-    "file": "day27-read-rust-atomics-and-locks-common-misconceptions-in-memory-ordering_230803",
+    "file": "day27-read-rust-atomics-and-locks-something-to-know-about-memory-ordering_230803",
     "excerpt": "Memory ordering is about things like reordering instructions, which usually happen at nanosecond scale no matter which ordering is used."
   },
   {
