@@ -9,7 +9,7 @@
 - Memory ordering is about things like reordering instructions, which usually happen at nanosecond scale no matter which ordering is used.
 - Even if we disable compiler optimization, we should still care about memory ordering.
 - Even if we use processors having only one core and only ever executing one instruction at a time, all in order, we should still care about memory ordering.
-- On all modern platforms (After 2023), relaxed load and store operations compile down to the same processor instructions as non-atomic reads and writes.
+- On all modern platforms, relaxed load and store operations compile down to the same processor instructions as non-atomic reads and writes.
 - Compilers tend to avoid most types of optimizations for atomic variables.
 - If any other memory ordering is correct, `SeqCst` is also correct. However, it’s possible that a concurrent algorithm is simply incorrect, regardless of memory ordering.
 - When seeing `Release`, it means "this relates to an acquire operation on the same variable"
