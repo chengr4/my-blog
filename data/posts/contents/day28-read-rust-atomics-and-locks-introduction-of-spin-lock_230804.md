@@ -2,7 +2,7 @@
 
 > by Mara Bos
 
-> At Topic: Chapter 4
+> At Topic: Chapter 4. Building Our Own Spin Lock
 
 ## Recaps
 
@@ -12,7 +12,7 @@
 
 ## Notes
 
-We have two locking strategies to ensure that only one thread at a time can access a shared resource: mutex and spin lock
+We have two locking strategies to ensure that only one thread at a time can access a shared resource: **mutex** and **spin lock**
 
 What is spin lock?
 
