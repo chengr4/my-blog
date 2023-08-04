@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day28] Read Rust Atomics and Locks - Introduction of Spin Lock",
+    "createdDate": "2023-08-04",
+    "categories": [
+      "cs"
+    ],
+    "file": "day28-read-rust-atomics-and-locks-introduction-of-spin-lock_230804",
+    "excerpt": "Instead of putting the thread to sleep, the thread will continuously attempt to lock the locked lock"
+  },
+  {
     "title": "[Day27] Read Rust Atomics and Locks - Something to know about memory ordering",
     "createdDate": "2023-08-03",
     "categories": [
