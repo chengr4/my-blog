@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day29] Read Rust Atomics and Locks - A Minimal Implementation of Spin Lock",
+    "createdDate": "2023-08-09",
+    "categories": [
+      "cs"
+    ],
+    "file": "day29-read-rust-atomics-and-locks-a-minimal-implementation-of-spin-lock_230809"
+  },
+  {
     "title": "[Day28] Read Rust Atomics and Locks - Introduction of Spin Lock",
     "createdDate": "2023-08-04",
     "categories": [
