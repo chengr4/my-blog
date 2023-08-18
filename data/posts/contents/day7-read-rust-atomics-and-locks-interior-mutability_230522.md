@@ -20,7 +20,7 @@ The compiler does not need to consider these situations, and will simply assume 
 
 Why do we need interior mutability?
 
-Ans: Threads following the common borrowing rules makes communication between each extremely limited, since no data can be mutated. By interior mutability and under certain conditions, data can allow mutation through an "immutable" reference
+Threads following the common borrowing rules makes communication between each extremely limited, since no data can be mutated. By interior mutability and under certain conditions, data can allow mutation through an "immutable" reference
 
 >  Since in this book we will mostly be working with exceptions, we’ll use the more accurate terms in the rest of this book: instead of "immutable" and "mutable", a shared reference (`&T`) and an exclusive reference (`&mut T`) are used
 

@@ -1,8 +1,10 @@
 # [Day9] Read Rust Atomics and Locks - Mutex, RwLock, Atomics and UnsafeCell
 
-> by Mara Bos
+> By Mara Bos
 
 > At Topics: Chapter 1. Basics of Rust Concurrency
+
+> Extension of interior mutability
 
 ## Recaps
 
@@ -41,7 +43,8 @@
 
 ### UnsafeCell
 
-- An `UnsafeCell` is the primitive building block (scope) for interior mutability
+- An `UnsafeCell` is the primitive building block (unit) for interior mutability
+- No restrictions to avoid undefined behavior
 - Can only be used in `unsafe` block
 - Commonly, an `UnsafeCell` is wrapped in another type that provides safety through a limited interface, such as `Cell` or `Mutex`. 
 - All types with interior mutability are built on top of `UnsafeCell`.
