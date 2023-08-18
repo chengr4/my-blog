@@ -4,7 +4,7 @@
 
 > At Lesson 0: Page 1 - Page 27
 
-## Prerequise
+## Prerequisites
 
 ### NoSQL 的 2pc
 
@@ -20,7 +20,7 @@
 - 使用 RDBMS 比 noSQL 有更快的開發速度 
 - 對一般中小型系統， RDBMS 效能足夠了 
 - 使用 RDBMS 更加安全
-- RDBMS 支援十進制的 numeric (支援浮點數) ，在計算金錢數 值時特別有用
+- RDBMS 支援十進制的 numeric (支援浮點數) ，在計算金錢數值時特別有用
 
 ### ACID
 
@@ -32,7 +32,7 @@
 - 在當機時，所有還沒有 commited 的 TX 全被 Rollback
 - 當機後，需要修復資料時。 RDBMS 必須以 TX 為單位進行修復
 
-Why Atomicity is important?
+Why atomicity is important?
 
 - 當機是不能避免的
 - 讓許多情境能簡單完成
@@ -51,10 +51,12 @@ Why Atomicity is important?
 - 不同人對 Consistency 定義不完全相同 (= =")
 - 系統的 Unique constraint 和 User-customized constraint 都必須滿足，否則，RDBMS 將會自動復原當前 TX 一切資料改動
 
-Why Consistency is important?
+Why consistency is important?
 
 - 有錯誤就 rollback TX，不用動腦讚拉
-- 在 noSQL 的 2pc ，有一半以上的程式碼花在當機後怎來復原資料
+
+>在 noSQL 的 2pc ，有一半以上的程式碼花在當機後怎來復原資料
+
 - **Atomicity 保證系統數據安全地移到下一個正確狀態; Consistency 保證系統在移動失敗時，能安全地回到本來正確狀態。**
 
 #### Isolation
@@ -69,7 +71,7 @@ Why Consistency is important?
 
 - 一旦 Committed 的資料改動，除非存儲空間受損，否則永不流失
 
->  MongoDB 標準設定是沒有等待 Disk WRITE 
+> MongoDB 標準設定是沒有等待 Disk WRITE 的成功寫入，對資料庫知識不足的使用者會造成當機時的數據流失。
 
 - 一旦斷電了， RDBMS 將會以 TX 為單位進行 Data Recovery ，保證資料庫不會停留在不正確的狀態。也就是說，RDBMS 的使用者不應該處理當機而發生的數據錯誤
 
