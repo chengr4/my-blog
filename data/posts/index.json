@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day2] 讀 RDBMS 課程 2019 - Misconceptions about RDBMS",
+    "createdDate": "2023-08-19",
+    "categories": [
+      "cs"
+    ],
+    "file": "day2-read-rdbms-course-2019-misconceptions_230819",
+    "excerpt": "對一般中小型系統， RDBMS 效能足夠了"
+  },
+  {
     "title": "[Day1] 讀 RDBMS 課程 2019 - RDBMS 和 ACID",
     "createdDate": "2023-08-18",
     "categories": [
