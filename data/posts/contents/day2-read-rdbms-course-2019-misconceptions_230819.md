@@ -8,8 +8,8 @@
 
 - NoSQL 正是發明來解決像 facebook 這種巨型系統的東西
 - Line 是用 HBase (2019)
-- 在中小型資料庫/只面對地區性用戶的系統， RDBMS 的可信度遠大於 
-- 用 rabbitMQ 
+- 在中小型資料庫/只面對地區性用戶的系統， RDBMS 的可信度遠大於 NoSQL
+- 用 rabbitMQ 來做 IPC (inter process channel) 
 
 ### Misconceptions about RDBMS
 
@@ -26,8 +26,8 @@
 
 - 在一般 OLTP 系統 (Online Transaction Processing)，有不少的場合都是讀取/建立/改動/刪除單一的物件 (Object)
 - 良好的 DB Design，大部分的 Model Class 都是對應單一的 table
-- 若好好設定 table 對應的 class 、 class 的 arrtribte 對應的 column 、 class 的 primary key ， ORM 能自動產生出 select/insert/update/delete 的 SQL => 加速開發時間，減少人為出錯
-- 善用切碎 statement
+- 若好好設定 table 對應的 class 、 class 的 attribute 對應的 column 、 class 的 primary key 等， ORM 能自動產生出 select/insert/update/delete 的 SQL => 加速開發時間，減少人為出錯
+- 善用切碎 statement 來達到目的
 
 
 ## References
