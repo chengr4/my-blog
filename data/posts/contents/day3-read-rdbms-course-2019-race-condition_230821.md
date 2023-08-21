@@ -51,4 +51,3 @@ Race Condition 的必需條件
 ## References
 
 - [Taipei 2019-04 course](https://github.com/TritonHo/slides/tree/master/Taipei%202019-04%20course)
-- https://www.mongodb.com/docs/manual/core/transactions/
