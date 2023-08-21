@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day3] 讀 RDBMS 課程 2019 - Race Condition",
+    "createdDate": "2023-08-21",
+    "categories": [
+      "cs"
+    ],
+    "file": "day3-read-rdbms-course-2019-race-condition_230821",
+    "excerpt": "正規化的基礎訓練，能讓你設計系統時能跟蹤前人的智慧，而不是自行發明看起來沒問題的演算法"
+  },
+  {
     "title": "[Day2] 讀 RDBMS 課程 2019 - Misconceptions about RDBMS",
     "createdDate": "2023-08-19",
     "categories": [
