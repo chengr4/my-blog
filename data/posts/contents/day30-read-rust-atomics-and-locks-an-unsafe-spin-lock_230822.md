@@ -4,6 +4,8 @@
 
 > At Topic: Chapter 4. Building Our Own Spin Lock, A Minimal Implementation
 
+> Unsafe: compiler is not validating for you no more
+
 ## Prerequisites
 
 - [Interior Mutability](https://marabos.nl/atomics/basics.html#interior-mutability)
@@ -29,7 +31,8 @@ If a lock is only ever held for **very brief moments** and the threads locking i
 - No restrictions to avoid undefined behavior
 - Can only be used in `unsafe` block
 - Commonly, an `UnsafeCell` is wrapped in another type that provides safety through a limited interface, such as `Cell` or `Mutex`. 
-- All types with interior mutability are built on top of `UnsafeCell`.
+- All types with interior mutability are built on top of `UnsafeCell`
+- Does not implement `Sync` (the type is no longer shareable between threads)
 
 ## Notes
 
@@ -48,27 +51,34 @@ pub struct SpinLock<T> {
     value: UnsafeCell<T>,
 }
 
+// make sure that the data can be shared between threads
 unsafe impl<T> Sync for SpinLock<T> where T: Send {}
 
-impl SpinLock {
-    // ensure initialization at compile-time
-    pub const fn new() -> Self {
-        Self { locked: AtomicBool::new(false) }
+impl<T> SpinLock<T> {
+    pub const fn new(value: T) -> Self {
+        Self {
+            locked: AtomicBool::new(false),
+            value: UnsafeCell::new(value),
+        }
     }
 
-    pub fn lock(&self) {
+    pub fn lock(&self) -> &mut T {
         while self.locked.swap(true, Acquire) {
             // keep trying to set the value to true until it succeeds
             std::hint::spin_loop();
         }
+        // An UnsafeCell can give us a raw pointer to its contents (*mut T) through its get() method, which we can convert to a reference within an unsafe block, as follows:
+        unsafe { &mut *self.value.get() }
     }
 
-    pub fn unlock(&self) {
+    // Shift the responsibility from compiler to the user
+    /// Safety: The &mut T from lock() must be gone!
+    /// (And no cheating by keeping reference to fields of that T around!)
+    pub unsafe fn unlock(&self) {
         self.locked.store(false, Release);
     }
 }
 ```
-
 
 ---
 

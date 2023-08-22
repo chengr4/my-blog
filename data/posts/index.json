@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day30] Read Rust Atomics and Locks - An Unsafe Spin Lock",
+    "createdDate": "2023-08-22",
+    "categories": [
+      "cs"
+    ],
+    "file": "day30-read-rust-atomics-and-locks-an-unsafe-spin-lock_230822",
+    "excerpt": "In most use cases, A spin lock will be used to protect mutations to a shared variable"
+  },
+  {
     "title": "[Day3] 讀 RDBMS 課程 2019 - Race Condition",
     "createdDate": "2023-08-21",
     "categories": [
