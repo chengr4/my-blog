@@ -23,7 +23,7 @@ If a lock is only ever held for **very brief moments** and the threads locking i
 ### `&T` and `&mut T`
 
 - A shared reference (`&T`) can be copied and shared with others
-- An exclusive reference (`&mut T`) guarantees it’s the only exclusive borrowing of that `T`.
+- An exclusive reference (`&mut T`) guarantees it’s the only exclusive borrowing of that `T`
 
 ### UnsafeCell
 
@@ -87,4 +87,3 @@ impl<T> SpinLock<T> {
 - [Rust Atomics and Locks by Mara Bos](https://marabos.nl/atomics/)
 - [並行程式設計](https://hackmd.io/@sysprog/concurrency/https%3A%2F%2Fhackmd.io%2F%40sysprog%2FS1AMIFt0D)
 - [Code examples of Rust Atomics and Locks.](https://github.com/m-ou-se/rust-atomics-and-locks)
-- [Constant evaluation](https://doc.rust-lang.org/reference/const_eval.html)
