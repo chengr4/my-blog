@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day4] 讀 RDBMS 課程 2019 - Read Phenomena",
+    "createdDate": "2023-08-24",
+    "categories": [
+      "cs"
+    ],
+    "file": "day4-read-rdbms-course-2019-read-phenomena_230824",
+    "excerpt": "Three types: dirty read, non-reapeatable read, phantom read"
+  },
+  {
     "title": "[Day30] Read Rust Atomics and Locks - An Unsafe Spin Lock",
     "createdDate": "2023-08-22",
     "categories": [
