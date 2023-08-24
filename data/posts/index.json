@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day5] 讀 RDBMS 課程 2019 - SX Lock and MVCC",
+    "createdDate": "2023-08-24",
+    "categories": [
+      "cs"
+    ],
+    "file": "day5-read-rdbms-course-2019-sxlock-myvcc_20230824",
+    "excerpt": "用途: 達到 isoliation 避免 race condition"
+  },
+  {
     "title": "[Day4] 讀 RDBMS 課程 2019 - Read Phenomena",
     "createdDate": "2023-08-24",
     "categories": [
