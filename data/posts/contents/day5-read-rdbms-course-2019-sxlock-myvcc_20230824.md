@@ -19,7 +19,7 @@
     - 因為 MVCC 的 READ 永遠不被阻擋，同一時間資料庫能處理更多的 TX
     - MVCC 只有 X lock 而沒有 S lock ，其 Deadlock detector 要管理的 lock 的數目一定更少，所以一定比較快
 
-#### SX Lock
+### SX Lock
 
 > aka. Readers–writer lock(RW lock)
 
@@ -29,7 +29,7 @@
 - 因為 S lock 能發給多個 TX ，所以同一時間能有多個 TX 讀取同一塊資料
 - 發行 X lock 時， Record 必須沒有其他的 lock (不管是 S 還是 X)。直到該 X lock 結束之前，該 Record 都不能發行其他的 lock
 
-#### MVCC
+### MVCC
 
 > Multiversion concurrency control
 
