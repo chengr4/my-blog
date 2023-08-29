@@ -14,7 +14,7 @@
     "categories": [
       "cs"
     ],
-    "file": "day5-read-rdbms-course-2019-sxlock-myvcc_20230824",
+    "file": "day5-read-rdbms-course-2019-sxlock-mvcc_20230824",
     "excerpt": "用途: 達到 isoliation 避免 race condition"
   },
   {
