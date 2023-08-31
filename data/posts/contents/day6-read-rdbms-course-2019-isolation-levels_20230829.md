@@ -33,19 +33,19 @@ MVCC:
 
 #### Practical Recommendations
 
-Prevent Non-Repeatable Reads:
+To prevent Non-Repeatable Reads:
 
 Utilizing "Conflict Promotion" within the Read Committed isolation level to prevent Non-Repeatable Reads, instead of relying on the built-in Repeatable Read isolation level of the RDBMS
 
-> Conflict Promotion: 在 checking 時，在 `select` 的指令尾部加入 `for share` ，讓所有讀取過的 Record 被加上 S lock ，直到 TX 結束 => 比 Repeatable Read 更精準
+> Conflict Promotion: 在 checking 時，在 `select` 的指令尾部加入 `for share` ，讓所有讀取過的 Record 被加上 S lock ，直到 TX 結束 => 比用 Repeatable Read mode 更精準地控制資料
 
 > MVCC 的資料庫不一定有 `for share` ，改用 `for update` 去拿 X lock 也有相同效果
 
-Prevent Phantom Read:
+To prevent Phantom Read:
 
 不建議使用 Serializable Isolation level，而是用 Conflict promotion + Conflict materialization 來預防
 
-以下是 Conflict materialization 的意思
+以下是 Conflict materialization 的意思:
 
 如果兩個 table 存在 parent-child 關係
 
@@ -83,10 +83,9 @@ SX Lock:
 
 MVCC:
 
-- 當有新版本的 committed rows 滿足 predicate ，而其版本是在
-本 TX 開始的時間點後，則本 TX raise exception 並且 rollback
+- 當有新版本的 committed rows 滿足 predicate ，而其版本是在本 TX 開始的時間點後，則本 TX raise exception 並且 rollback
 - Oracle 沒有這個級別
-- 在 MVCC 世界中的 Serializable Isolation ，便是專門用來防範 write skew 的
+- 在 MVCC 世界中的 Serializable Isolation ，是專門用來防範 write skew 的
 
 > skew: skew (a kind of phantom read) is a phenomenon in which a transaction reads data that is written by another transaction that commits after it started reading the data, but before it commits.
 
