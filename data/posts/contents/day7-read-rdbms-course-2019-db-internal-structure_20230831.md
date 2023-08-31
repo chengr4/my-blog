@@ -1,4 +1,4 @@
-# [Day7] 讀 RDBMS 課程 2019 - Database internal structure
+# [Day7] 讀 RDBMS 課程 2019 - Database Internal Structure
 
 > By Triton Ho
 
