@@ -42,7 +42,7 @@ One of reasons is in scenarios where there is a requirement to interface with an
     - Don’t implement any automatic cleanup
 - We can create raw pointers in safe code, while we can’t dereference raw pointers outside an unsafe block
 
-## Recaps
+## Recall
 
 When working with atomics (mutating data that's shared between threads), we have to explicitly tell the compiler and processor what they can and can't do with our atomic operations by the `std::sync::atomic::Ordering` enum.
 

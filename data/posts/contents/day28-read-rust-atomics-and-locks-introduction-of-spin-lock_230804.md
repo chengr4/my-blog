@@ -4,7 +4,7 @@
 
 > At Topic: Chapter 4. Building Our Own Spin Lock
 
-## Recaps
+## Recall
 
 ### Mutex
 

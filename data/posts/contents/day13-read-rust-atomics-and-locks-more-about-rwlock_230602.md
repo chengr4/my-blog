@@ -8,7 +8,7 @@
 
 > At Topics: Chapter 1. Basics of Rust Concurrency
 
-## Recaps
+## Recall
 
 - Trait `Send`: A type is `Send` if it can be sent to another thread. In other words, if ownership of a value of that type can be transferred to another thread.
 - Trait `Sync`: A type is `Sync` if it can be shared with another thread. In other words, a type `T` is `Sync` if and only if a shared reference to that type `&T` is `Send`.

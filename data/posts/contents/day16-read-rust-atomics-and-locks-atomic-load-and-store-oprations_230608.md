@@ -8,7 +8,7 @@
 
 > At Topics: Chapter 2. Atomics
 
-## Recaps
+## Recall
 
 - Atomic operations allow for different threads to safely read and modify the same variable
 - By interior mutability, they allow modification through a shared reference

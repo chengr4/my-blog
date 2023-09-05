@@ -6,7 +6,7 @@
 
 > Extension of interior mutability
 
-## Recaps
+## Recall
 
 ### RefCell
 

@@ -10,7 +10,7 @@
 
 - [Interior Mutability](https://marabos.nl/atomics/basics.html#interior-mutability)
 
-## Recaps
+## Recall
 
 What is spin lock?
 

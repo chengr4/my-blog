@@ -4,7 +4,7 @@
 
 > At Topics: Chapter 1. Basics of Rust Concurrency
 
-## Recaps
+## Recall
 
 Why we need Reference Counting?
 

@@ -8,7 +8,7 @@
 
 > At Topics: Chapter 1. Basics of Rust Concurrency
 
-## Recaps
+## Recall
 
 - The Rust standard library provides the `std::thread::scope` function to spawn such scoped threads. It allows us to spawn threads that cannot outlive the scope of the closure we pass to that function, making it possible to safely borrow local variables.
 - `MutexGuard`: it represents the guarantee that we have locked the mutex.

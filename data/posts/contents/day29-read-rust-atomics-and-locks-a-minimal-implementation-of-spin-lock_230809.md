@@ -4,7 +4,7 @@
 
 > At Topic: Chapter 4. Building Our Own Spin Lock, A Minimal Implementation
 
-## Recaps
+## Recall
 
 What is spin lock?
 

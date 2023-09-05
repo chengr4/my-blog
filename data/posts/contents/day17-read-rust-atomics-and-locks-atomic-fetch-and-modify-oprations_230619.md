@@ -12,7 +12,7 @@
 
 By default, when a panic occurs, the program starts *unwinding*, which means Rust walks back up the stack and cleans up the data from each function it encounters. However, this walking back and cleanup is a lot of work. Rust, therefore, allows you to choose the alternative of immediately *aborting*, which ends the program without cleaning up (OS will take it over).
 
-## Recaps
+## Recall
 
 - Atomic operations allow for different threads to safely read and modify the same variable
 - By interior mutability, they allow modification through a shared reference
