@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day8] 讀 RDBMS 課程 2019 - B+ Tree, Index-Organized Table, Heap Table",
+    "createdDate": "2023-09-07",
+    "categories": [
+      "cs"
+    ],
+    "file": "day8-read-rdbms-course-2019-bplustree-iot-ht_20230907"
+  },
+  {
     "title": "[Day7] 讀 RDBMS 課程 2019 - Database internal structure",
     "createdDate": "2023-08-31",
     "categories": [
