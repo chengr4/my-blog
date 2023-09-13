@@ -2,7 +2,7 @@
 
 > By Triton Ho
 
-> At Lesson 2: Page 3 - Page 27
+> At Lesson 2: Page 13 - Page 27
 
 ## Notes
 
@@ -12,14 +12,13 @@
 
 > Primary key, Unique Constraint 背後也是 index
 
-- Height of B+ Tree is O(log n), and is normally <= 4
-    - only need 4 disk read to find the data
+- Height of B+ Tree is `O(log n), and is normally <= 4
+    - Only need 4 disk read to find the data
     - Besides, in the real world, non-leaf node is always cached in memory, so disk read is ~= 1
-- 如果2個 TX 改動的 record 不在同一 data page ，他們便能同時更
-動 B+ tree
+- 如果2個 TX 改動的 record 不在同一 data page ，他們便能同時更動 B+ tree
 - Auto balancing
 
-> balanced 和 even distributed 不是同一概念，請注意
+> Warning: balanced 和 even distributed 不是同一概念
 
 ### Index-Organized Table (IOT)
 
@@ -43,12 +42,12 @@ Record data 「隨意」找一個 data page 存放。 Primary key 獨立放在�
     - 一個 index leaf node 可以存放更多的 rows ，leaf node splitting/merging 自然大減
     - 即使發生 index leaf node splitting/merging ，也不會令 row data 需要移動位置
 - Record data 能存放到 heap 中任何一個 data page ，沒有指定位置
-    - 即使 PK 是用上 auto-increment ，相近 PK 的 row 仍然會散落到整個 heap 之內，先天性不容易發生 data page contention
-    - 在 insert new rows 時， Record data 輕易能找一個沒有正被改動中的 datapage 來寫入。不容易發生 blocking
+    - 即使 PK 是用 auto-increment ，相近 PK 的 row 仍然會散落到整個 heap 之內，先天性不容易發生 data page contention
+    - 在 insert new rows 時， Record data 輕易能找一個沒有正被改動中的 data page 來寫入。不容易發生 blocking
 
 缺點：
 
-- Range Scan on PK 一般需要整個 table 都作一次 scaning ，極吃 IO
+- Range Scan on PK 一般需要整個 table 都作一次 scanning ，極吃 IO
     - 若很少使用 range scan on PK ，這個缺點便不算是缺點，例如 OLTP (Online Transaction Processing) 系統
     - 若是做數據分析/產生報表的 OLAP (Online Analytical Processing) 系統，這便是缺點
 - 只少需要兩次 storage IO 才能找到一個 row

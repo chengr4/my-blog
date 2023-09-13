@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day9] 讀 RDBMS 課程 2019 - Primary Key",
+    "createdDate": "2023-09-13",
+    "categories": [
+      "cs"
+    ],
+    "file": "day9-read-rdbms-course-2019-pk_20230913",
+    "excerpt": "Nature Key vs Surrogate Key"
+  },
+  {
     "title": "[Day8] 讀 RDBMS 課程 2019 - B+ Tree, Index-Organized Table, Heap Table",
     "createdDate": "2023-09-07",
     "categories": [
