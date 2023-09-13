@@ -7,12 +7,12 @@
 ## Notes
 
 - Nature Key: Eg. 身份證號碼, Email, 航班日期 + 航班編號
-- Surrogate Key: no meaning, Eg. auto increment, UUID
+- Surrogate Key: no specific meaning key, Eg. auto increment, UUID
 - 一般商業系統(不考慮報表的部份)，90%的資料讀取/改動都是基於 PK 的
 - 同一時期建立的 Record ，它們相近時間被改動/刪除的可能性比較高
     - 所以為了避免發生 Contention ，不應該把同一時期建立的 Record 集中儲存在一起
     - 但也不能過份分散 (影響: Cache hit rate)
-- Ramdom PK 會引發大量 Random IO =>會，但若是 heap table ，Random IO 只集中在體積很小的 PK index
+- Random PK 會引發大量 Random IO => 會，但若是 heap table ，Random IO 只集中在體積很小的 PK index
 
 ### Nature Key
 
@@ -36,11 +36,11 @@ Pros:
 
 Cons:
 
-- Auto increment 本身是一個潛在的 Contention point 問題
-- 單純地使用 Auto increment 會讓所有的 insert 集中在 B+ tree 的其中 一邊
+- Auto increment 本身是一個潛在的 Contention 問題
+- 單純地使用 Auto increment 會讓所有的 insert 集中在 B+ tree 的其中一邊
     - Insert 可能造成 contention
     - Delete 時造成 B+ tree uneven distribution
-- UUID 不能保證 100 %的 uniqueness ，只是相撞可能性很很低
+- UUID 不能保證 100% 的 uniqueness ，只是相撞可能性很很低
 
 ### Monotonic Increasing PK
 
@@ -51,7 +51,7 @@ Cons:
 
 - Rodo log
 - Undo log
-- checl point
+- check point
 - background writer: 每隔一段時間，檢查一次 buffer pool ，把 dirty page 寫回 disk
 
 > dirty page: buffer pool 中的 page 被改動過，但尚未寫回 disk
