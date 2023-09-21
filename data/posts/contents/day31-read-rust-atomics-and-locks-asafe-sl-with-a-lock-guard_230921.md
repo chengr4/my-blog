@@ -4,7 +4,7 @@
 
 > At Topic: Chapter 4. A Safe Interface Using a Lock Guard
 
-> Recommendation: Start reading from the beginning of the chapter to get the full picture
+> Recommendation: Start reading from the beginning of the chapter of the book to get the full picture
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ struct ImportantExcerpt<'a> {
 
 - Enable dereferencing with the `*` operator
 - Enable to use the method of the inner type directly on the outer type of struct
-- `DerefMut` is the same as `Deref` but for mutable references
+- `DerefMut` is the same as `Deref` but for exclusive references
 
 ## Recall
 
@@ -40,8 +40,8 @@ To be able to provide a fully safe interface, we need to tie the unlocking opera
 
 How to do it?
 
-1. wrapping reference of SpinLock in our own type that behaves like a reference. => use type `Guard` + `Deref` trait + `DerefMut` trait
-2. implements the `Drop` trait to do something when it is dropped.
+1. Wrapping reference of SpinLock in our own type that behaves like a reference. => use type `Guard` + `Deref` trait + `DerefMut` trait
+2. Implements the `Drop` trait to do something when it is dropped.
 
 ```rust
 // source: https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/src/ch4_spin_lock/s3_guard.rs
