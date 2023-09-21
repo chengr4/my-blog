@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day31] Read Rust Atomics and Locks - A safe Spin Lock with a Lock Guard",
+    "createdDate": "2023-09-21",
+    "categories": [
+      "cs"
+    ],
+    "file": "day31-read-rust-atomics-and-locks-asafe-sl-with-a-lock-guard_230921"
+  },
+  {
     "title": "[Day9] 讀 RDBMS 課程 2019 - Primary Key",
     "createdDate": "2023-09-13",
     "categories": [

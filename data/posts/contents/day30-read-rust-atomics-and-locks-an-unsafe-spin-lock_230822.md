@@ -4,7 +4,9 @@
 
 > At Topic: Chapter 4. Building Our Own Spin Lock, A Minimal Implementation
 
-> Unsafe: compiler is not validating for you no more
+> Recommendation: Start reading from the beginning of the chapter to get the full picture
+
+Unsafe: compiler is not validating for you no more
 
 ## Prerequisites
 
