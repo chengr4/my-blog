@@ -10,7 +10,7 @@
 
 ## Recall
 
-- The Rust standard library provides the `std::thread::scope` function to spawn such scoped threads. It allows us to spawn threads that cannot outlive the scope of the closure we pass to that function, making it possible to safely borrow local variables.
+- `std::thread::scope`: It allows us to spawn threads that **cannot outlive** the scope of the closure we pass to that function, making it possible to safely borrow local variables.
 - `MutexGuard`: it represents the guarantee that we have locked the mutex.
 
 ## Notes
@@ -76,33 +76,42 @@ fn main() {
 Eg:
 
 ```rust
+// source: https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/examples/ch1-12-condvar.rs
+
+use std::collections::VecDeque;
 use std::sync::Condvar;
+use std::sync::Mutex;
+use std::thread;
+use std::time::Duration;
 
-let queue = Mutex::new(VecDeque::new());
-let not_empty = Condvar::new();
+fn main() {
+    let queue = Mutex::new(VecDeque::new());
+    let not_empty = Condvar::new();
 
-thread::scope(|s| {
-    s.spawn(|| {
-        loop {
-            let mut q = queue.lock().unwrap();
-            let item = loop {
-                if let Some(item) = q.pop_front() {
-                    break item;
-                } else {
-                    q = not_empty.wait(q).unwrap();
-                }
-            };
-            drop(q);
-            dbg!(item);
+    // it contains two threads
+    thread::scope(|s| {
+        s.spawn(|| {
+            loop {
+                let mut q = queue.lock().unwrap();
+                let item = loop {
+                    if let Some(item) = q.pop_front() {
+                        break item;
+                    } else {
+                        q = not_empty.wait(q).unwrap();
+                    }
+                };
+                drop(q);
+                dbg!(item);
+            }
+        });
+
+        for i in 0.. {
+            queue.lock().unwrap().push_back(i);
+            not_empty.notify_one();
+            thread::sleep(Duration::from_secs(1));
         }
     });
-
-    for i in 0.. {
-        queue.lock().unwrap().push_back(i);
-        not_empty.notify_one();
-        thread::sleep(Duration::from_secs(1));
-    }
-});
+}
 ```
 
 ---

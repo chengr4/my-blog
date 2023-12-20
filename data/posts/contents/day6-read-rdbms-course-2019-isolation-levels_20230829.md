@@ -9,8 +9,8 @@
 4 levels:
 
 - Read Uncommitted
-- Read Committed: Prevent Dirty Read
-- Repeatable Read: Prevent Dirty Read and Non-Repeatable Read
+- Read Committed: Prevent Dirty Read (PostgreSQL default)
+- Repeatable Read: Prevent Dirty Read and Non-Repeatable Read (MySQL default)
 - Serializable: Prevent Dirty Read, Non-Repeatable Read and Phantom Read
 
 ### Read Committed
@@ -24,7 +24,7 @@ SX Lock:
 
 MVCC:
 
-- 進行 insert/update/delete 時，會先為 Record 其加上 X LOCK，直到 TX完成
+- 進行 insert/update/delete 時，會先為 Record 其加上 X LOCK，直到 TX 完成
 - Read Record 時，只會考慮已經 committed 的最新版本
 
 > 即使 Record 已被加上 X lock ， Read 也不會被阻擋

@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day10] 讀 RDBMS 課程 2019 - Schema Design of OLTP",
+    "createdDate": "2023-12-19",
+    "categories": [
+      "cs"
+    ],
+    "file": "day10-read-rdbms-course-2019-olpt-schema-design_20231219",
+    "excerpt": "E-commerce, Banking System, Airline Reservation System, ..."
+  },
+  {
     "title": "[Rust] 理解 TreeNode 的子節點的 `Option<Rc<RefCell<TreeNode>>>`",
     "createdDate": "2023-11-05",
     "categories": [

@@ -1,6 +1,6 @@
 # [Golang] Golang 的 Set
 
-## 前言
+## 引言
 
 某天在使用 Golang 的時候，突然發現原來 Golang 沒有像其他語言一樣有實作 `Set` 的 data structure，稍微爬了文後發現，原來 Golang 會用 `map` 來模擬 `Set` ，以下是僅是小小的紀錄。
 
