@@ -12,7 +12,7 @@
 ### Question to ask yourself, before adding index
 
 1. 如果你要增加的是 unique index ，你有強烈原因不讓它作為 table 的 Natural key 嗎? (沒搞懂原因)
-2. 你的資料庫是讀重要還是寫重要?
+2. 你的資料庫是「讀」重要還是「寫」重要?
 3. non-unique index 能使 candidate records 數目變到 100 下。 E.g.
 
     ```sql

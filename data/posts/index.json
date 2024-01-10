@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day12] 讀 RDBMS 課程 2019 - Bad Schema Design in OLTP",
+    "createdDate": "2024-01-10",
+    "categories": [
+      "cs"
+    ],
+    "file": "day12-read-rdbms-course-2019-bad-oltp-design_20240110"
+  },
+  {
     "title": "[Day11] 讀 RDBMS 課程 2019 - Secondary Index",
     "createdDate": "2024-01-03",
     "categories": [
