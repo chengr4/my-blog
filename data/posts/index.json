@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day13] 讀 RDBMS 課程 2019 - The Act of SQL",
+    "createdDate": "2024-01-12",
+    "categories": [
+      "cs"
+    ],
+    "file": "day13-read-rdbms-course-2019-sql-act_20240112",
+    "excerpt": "SQL 是宣告式語言"
+  },
+  {
     "title": "[Day12] 讀 RDBMS 課程 2019 - Bad Schema Design in OLTP",
     "createdDate": "2024-01-10",
     "categories": [
