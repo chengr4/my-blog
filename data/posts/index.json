@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day14] 讀 RDBMS 課程 2019 - Common SQL Syntax",
+    "createdDate": "2024-01-25",
+    "categories": [
+      "cs"
+    ],
+    "file": "day14-read-rdbms-course-2019-common-sql-syntax_20240125",
+    "excerpt": "常用的 SQL 語法"
+  },
+  {
     "title": "[Day13] 讀 RDBMS 課程 2019 - The Act of SQL",
     "createdDate": "2024-01-12",
     "categories": [
