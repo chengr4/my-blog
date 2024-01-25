@@ -6,6 +6,11 @@
 
 ## Notes
 
+### SQL: 2003
+
+- (2019 時間點) MYSQL 5.7 不支持、PostgresSQL 不支持 MERGE, Oracle 全面支持、MARIADB 10.2 支持
+- New Features:  window function, MERGE
+
 ### `case when`
 
 - SQL 的 if-else
@@ -25,18 +30,16 @@ SELECT * frim students ORDER BY gender
 
 ### Window Function
 
+- 在 SQL 2003 之前，若需要 pagination ，需使用各家 RDBMS 自己的語法
 - Start from SQL 2003
-- 如果沒有 window function => 需要 pagination
+- 它統一了 pagination 的做法，並且增強了功能
 - Eg. `ROW_NUMBER() OVER, RANK() OVER`
-- (2019 時間點) MYSQL 5.7 不支持、PostgresSQL 不支持 MERGE, Oracle 全面支持、MARIADB 10.2 支持
 
 ### `WITH` Clause
 
 - 能在 Query statement 中，建立只給這 statement 使用的 view (modularization)
 
-Eg.
-
-每班成績首三名的學生中，他們之間有兄弟姐妹關係的人
+Eg. 找尋每班成績首三名的學生中，他們之間有兄弟姐妹關係的人
 
 ```sql
 With top3students as (
@@ -54,16 +57,16 @@ Select * from top3students t1
   )
 ```
 
-- 推測：也就是說有重複的 query 時，可以用 `WITH` clause 來避免重複寫
+- 推測使用時機：也就是說有重複的 query 時，可以用 `WITH` clause 來避免重複寫
 
 ## Recursive Query
 
-- 在 2019 年時語法尚未統一 (儘管 Oracale/PostgresSQL/MYSQL 都有支援)
+- 在 2019 年時語法尚未統一 (儘管 Oracle/PostgresSQL/MYSQL 都有支援)
 - 一般來說是為了 tree-like 的資料，像是： 祖譜、物種分類
 
 ## Others
 
-- `Insert into...... select`: A table 抄到 B table 很好用
+- `Insert into...... select`: 將 A table 抄到 B table 很好用
 
 ## References
 
