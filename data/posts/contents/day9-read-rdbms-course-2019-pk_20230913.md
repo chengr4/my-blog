@@ -6,7 +6,7 @@
 
 ## Notes
 
-- Nature Key: Eg. 身份證號碼, Email, 航班日期 + 航班編號
+- Natural Key: Eg. 身份證號碼, Email, 航班日期 + 航班編號
 - Surrogate Key: no specific meaning key, Eg. auto increment, UUID
 - 一般商業系統(不考慮報表的部份)，90%的資料讀取/改動都是基於 PK 的
 - 同一時期建立的 Record ，它們相近時間被改動/刪除的可能性比較高
