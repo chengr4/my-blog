@@ -68,10 +68,16 @@ fn main() {
 
 ### Condition Variables
 
+A more commonly used option for waiting for something to happen to data protected by a mutex
+
 - Two basic operations: `wait` and `notify`
 - `std::sync::Condvar`
-- `Condvar` only works when used together with a Mutex
-- Besides, normally, a `Condvar` is only ever used together with a single Mutex.
+- `Condvar` must works together with a Mutex (downside)
+- Moreover, a `Condvar` is normally only used together with a **single** Mutex (no more Mutex).
+- Multiple threads can wait on the same `Condar` 
+- Also, notifications can either be sent to one or all of waiting threads.
+- Use Cases: Build a channel 
+- `Condvar::wait_timeout()`: If the thread does not get notified within a certain time, it should wake up and get the lock back.
 
 Eg:
 
@@ -95,8 +101,11 @@ fn main() {
                 let mut q = queue.lock().unwrap();
                 let item = loop {
                     if let Some(item) = q.pop_front() {
+                        // break and return the item
                         break item;
                     } else {
+                        // It unlocks the mutex and pushes the thread to sleep
+                        // after being notified (wake up), it will lock the mutex again
                         q = not_empty.wait(q).unwrap();
                     }
                 };
