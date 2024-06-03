@@ -74,7 +74,7 @@ A more commonly used option for waiting for something to happen to data protecte
 - `std::sync::Condvar`
 - `Condvar` must works together with a Mutex (downside)
 - Moreover, a `Condvar` is normally only used together with a **single** Mutex (no more Mutex).
-- Multiple threads can wait on the same `Condar` 
+- Multiple threads can wait on the same `Condar`
 - Also, notifications can either be sent to one or all of waiting threads.
 - Use Cases: Build a channel 
 - `Condvar::wait_timeout()`: If the thread does not get notified within a certain time, it should wake up and get the lock back.
@@ -83,7 +83,6 @@ Eg:
 
 ```rust
 // source: https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/examples/ch1-12-condvar.rs
-
 use std::collections::VecDeque;
 use std::sync::Condvar;
 use std::sync::Mutex;
@@ -92,7 +91,7 @@ use std::time::Duration;
 
 fn main() {
     let queue = Mutex::new(VecDeque::new());
-    let not_empty = Condvar::new();
+    let not_empty = Condvar::new(); // Ensure that the queue is not empty before a thread continues execution
 
     // it contains two threads
     thread::scope(|s| {
@@ -109,7 +108,7 @@ fn main() {
                         q = not_empty.wait(q).unwrap();
                     }
                 };
-                drop(q);
+                drop(q); // unlock the mutex
                 dbg!(item);
             }
         });

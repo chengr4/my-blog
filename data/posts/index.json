@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day32] Read Rust Atomics and Locks - A Simple Mutex-Based Channel",
+    "createdDate": "2024-06-03",
+    "categories": [
+      "cs"
+    ],
+    "file": "day32-read-rust-atomics-and-locks-a_simple_mutex_channel_240603",
+    "excerpt": "Function of Channel: Send data from one thread to another"
+  },
+  {
     "title": "[Day15] 讀 RDBMS 課程 2019 - Common Mistakes in Large System Architecture",
     "createdDate": "2024-06-01",
     "categories": [
