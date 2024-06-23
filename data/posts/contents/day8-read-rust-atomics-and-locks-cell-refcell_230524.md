@@ -24,6 +24,7 @@ Ans: Threads following the common borrowing rules makes communication between ea
 - If `T` is `Copy`, it allows you to copy the value out (with `get` method).
 - All types `T` can be replaced with another value as a whole.
 - It can only be used within a single thread.
+- The concurrent version of a `Cell` is atomic types such as `AtomicU32` and `AtomicPtr<T>`.
 
 Let's compare the following two functions:
 
@@ -84,7 +85,7 @@ fn f(v: &Cell<Vec<i32>>) {
 
 - It has a counter for outstanding (仍然存在的) borrows
 - It can only be used within a single thread (like `Cell`)
-- concurrent version of a RefCell is ` RwLock<T>`
+- The concurrent version of a RefCell is ` RwLock<T>`
 
 ### `RefCell` vs `Cell`
 
@@ -93,6 +94,7 @@ fn f(v: &Cell<Vec<i32>>) {
 | Can be borrowed | No | Yes |
 | Can be borrowed mutably | No | Yes |
 | Can be used across multiple threads | No | No |
+| The concurrent version | Atomic types | RwLock<T> |
 
 ---
 
