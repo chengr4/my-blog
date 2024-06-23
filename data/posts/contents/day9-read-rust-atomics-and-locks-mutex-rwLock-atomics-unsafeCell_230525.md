@@ -43,13 +43,11 @@
 
 ### UnsafeCell
 
-- An `UnsafeCell` is the primitive building block (unit) for interior mutability
+- An `UnsafeCell` is the primitive building unit for **interior mutability**
 - No restrictions to avoid undefined behavior
 - Can only be used in `unsafe` block
-- Commonly, an `UnsafeCell` is wrapped in another type that provides safety through a limited interface, such as `Cell` or `Mutex`. 
-- All types with interior mutability are built on top of `UnsafeCell`.
-
-> Including: `Cell`, `RefCell`, `RwLock`, `Mutex`....
+- Commonly, an `UnsafeCell` is wrapped in another type that provides safety through a limited interface, such as `Cell` or `Mutex`.
+- In other words, all types with interior mutability are built on top of `UnsafeCell`, Including: `Cell`, `RefCell`, `RwLock`, `Mutex`...
 
 ---
 
