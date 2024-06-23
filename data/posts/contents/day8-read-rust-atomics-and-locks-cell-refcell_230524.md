@@ -17,30 +17,32 @@ Ans: Threads following the common borrowing rules makes communication between ea
 
 ## Notes
 
-### Cell
+### `Cell<T>`
 
 - `std::cell::Cell<T>`
-- If `T` is `Copy`, it allows you to copy the value out
-- Or replace the value with another value as a whole (not allow to borrow its content)
-- It can only be used within a single thread
-- `Cell` has interior mutability
+- `Cell` has interior mutability.
+- If `T` is `Copy`, it allows you to copy the value out (with `get` method).
+- All types `T` can be replaced with another value as a whole.
+- It can only be used within a single thread.
 
 Let's compare the following two functions:
 
 ```rust
-// nothing in the entire program can mutably borrow the integer that `a` refers to as long as `a` is borrowing it.
-fn f(a: &i32, b: &mut i32) {
+// nothing in the entire program can "mutably borrow" the integer that `a` refers to as long as `a` is borrowing it.
+fn f1(a: &i32, b: &mut i32) {
     let before = *a;
-    *b += 1; // incrementing the integer that b refers to
-    let after = *a; // *a will not change
+    *b += 1; // never incrementing the integer that a refers to
+    let after = *a; // 'after' never changes from `*b += 1`
     if before != after {
         x(); // never happens
     }
 }
 
+// v.s.
+
 use std::cell::Cell;
 
-fn f(a: &Cell<i32>, b: &Cell<i32>) {
+fn f2(a: &Cell<i32>, b: &Cell<i32>) {
     let before = a.get();
     b.set(b.get() + 1); // Both a and b might refer to the same value, such that mutating through b might affect a as well
     let after = a.get();
@@ -50,36 +52,53 @@ fn f(a: &Cell<i32>, b: &Cell<i32>) {
 }
 ```
 
-In addition, Since `Cell` can’t directly let us borrow the value it holds, we need to move a value out (leaving something in its place), modify it, then put it back, to mutate its contents:
+In addition, `Cell` **can’t** directly let us borrow the value it holds. We need to move a value out and leave something in its place in advance, modify it, and then put it back to mutate its contents:
 
 ```rust
 fn f(v: &Cell<Vec<i32>>) {
-    let mut v2 = v.take(); // Replaces the contents of the Cell with an empty Vec (leaving something in its place)
+    let mut v2 = v.take(); // Replaces the contents of the Cell with an empty Vec (leaving "something" in its place)
     v2.push(1);
-    v.set(v2); // Put the modified Vec back
+    v.set(v2); // Put the modified Vec back into the Cell
 }
 ```
 
-### RefCell
+### `RefCell<T>`
 
 - `std::cell::RefCell`
-- Unlike `Cell`, it allows you to borrow its contents (call `borrow()` or `borrow_mut()`)
+- Better than `Cell`, it allows you to borrow its contents (call `borrow()` or `borrow_mut()`)
 
     ```rust
+    // source: https://github.com/m-ou-se/rust-atomics-and-locks/blob/d945e828bd08719a2d7cb6d758be4611bd90ba2b/examples/ch1-07-refcell.rs
     use std::cell::RefCell;
 
     fn f(v: &RefCell<Vec<i32>>) {
         v.borrow_mut().push(1); // We can modify the `Vec` directly.
     }
+
+    fn main() {
+        let v = RefCell::new(vec![1, 2, 3]);
+        f(&v);
+        assert_eq!(v.into_inner(), vec![1, 2, 3, 1]);
+    }
     ```
 
-- It has a counter for outstanding (未處理的) borrows
-- It can only be used within a single thread
+- It has a counter for outstanding (仍然存在的) borrows
+- It can only be used within a single thread (like `Cell`)
+- concurrent version of a RefCell is ` RwLock<T>`
+
+### `RefCell` vs `Cell`
+
+|| `Cell` | `RefCell` |
+|---|---|---|
+| Can be borrowed | No | Yes |
+| Can be borrowed mutably | No | Yes |
+| Can be used across multiple threads | No | No |
 
 ---
 
 ## References
 
 - [Rust Atomics and Locks by Mara Bos](https://marabos.nl/atomics/)
+- [Code examples of Rust Atomics and Locks](https://github.com/m-ou-se/rust-atomics-and-locks)
 - [Generic Types, Traits, and Lifetimes - The Rust Programming Language (rust-lang.org)](https://doc.rust-lang.org/stable/book/ch10-00-generics.html)
-- [並行程式設計](https://hackmd.io/@sysprog/concurrency/https%3A%2F%2Fhackmd.io%2F%40sysprog%2FS1AMIFt0D)
+- [`Cell<T>`](https://doc.rust-lang.org/std/cell/#cellt)
