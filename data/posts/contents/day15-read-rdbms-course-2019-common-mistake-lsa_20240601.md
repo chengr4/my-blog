@@ -12,7 +12,7 @@
     - 例如：轉帳請不要用兩次 PUT User_balances API ，而是用一次 POST Transfer API
     - 避免 race condition
 
-### Prevent Postive Feedback
+### Prevent Positive Feedback
 
 > Postive feedback: 簡言之，就是使用者不斷按重新整理導致 request 大增
 
@@ -27,8 +27,8 @@
 
 ### Cache
 
-- 原本有 n 台 caching 主機，新增主機至 m 台後應該先 `mod(md5(key), m)` 看看新位置有否有資料，若沒有去 `mod(md5(key), n)` 取得資料
-- 不應該將 hotdata 只放在一台 caching 主機上
+- 原本有 n 台 caching 主機，新增主機至 m 台後應該先 `mod(md5(key), m)` 看看新位置有否有資料，若沒有則去 `mod(md5(key), n)` 取得資料
+- 不應該將 hot data 只放在一台 caching 主機上
 
 ## References
 

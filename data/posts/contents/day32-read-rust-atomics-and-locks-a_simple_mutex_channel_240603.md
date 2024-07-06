@@ -2,6 +2,8 @@
 
 > by Mara Bos
 
+> At Topic: Chapter 5. A Simple Mutex-Based Channel
+
 ## Recall
 
 ### `std::sync::Condvar`
@@ -9,8 +11,7 @@
 A more commonly used option for waiting for something to happen to data protected by a mutex
 
 - Two basic operations: `wait` and `notify`
-- `std::sync::Condvar`
-- `Condvar` must works together with a Mutex (downside)
+- `Condvar` **must** works together with a Mutex (downside)
 - Moreover, a `Condvar` is normally only used together with a **single** Mutex (no more Mutex).
 - Multiple threads can wait on the same `Condar`
 - Also, notifications can either be sent to one or all of waiting threads.

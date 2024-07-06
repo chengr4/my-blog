@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day33] Read Rust Atomics and Locks - An Unsafe One-Shot Channel",
+    "createdDate": "2024-07-06",
+    "categories": [
+      "cs"
+    ],
+    "file": "day33-read-rust-atomics-and-locks-an_unsafe_one-shot_channel_240706",
+    "excerpt": "Function of One-Shot Channel: Send 'exactly one' message from one thread to another."
+  },
+  {
     "title": "[Day32] Read Rust Atomics and Locks - A Simple Mutex-Based Channel",
     "createdDate": "2024-06-03",
     "categories": [
