@@ -22,6 +22,7 @@ Which are:
 
 - Atomic operations using relaxed memory ordering do not provide any happens-before relationship
 - But it promises from the perspective of every other threads all modifications of the same atomic variable happen in a same order
+- **(Important) If using relaxed ordering, the compiler or CPU might reorder instructions! => Sometimes, release-acquire ordering is a must**
 
 See following example:
 

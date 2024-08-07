@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day34] Read Rust Atomics and Locks - Safty Through Runtime Checks",
+    "createdDate": "2024-08-07",
+    "categories": [
+      "cs"
+    ],
+    "file": "day34-read-rust-atomics-and-locks-safty-through-rc_240807",
+    "excerpt": "An Extension of the previous paragraph: An Unsafe One-Shot Channel"
+  },
+  {
     "title": "[Day33] Read Rust Atomics and Locks - An Unsafe One-Shot Channel",
     "createdDate": "2024-07-06",
     "categories": [

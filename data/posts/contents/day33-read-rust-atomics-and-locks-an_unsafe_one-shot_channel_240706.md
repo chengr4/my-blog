@@ -15,12 +15,12 @@
 - In other words, all types with interior mutability are built on top of `UnsafeCell`, Including: `Cell`, `RefCell`, `RwLock`, `Mutex`...
 - Gets a mutable raw pointer (`*mut T`) to the wrapped value by `get` method.
 
-## Sync and Send Trait
+### Sync and Send Trait
 
 - `Sync`: A type is `Sync` if it is safe to reference its value from multiple threads
 - `Send`: A type is `Send` if it is safe to transfer ownership of its value to another thread
 
-## Acquire and Release Ordering
+### Acquire and Release Ordering
 
 - One thread releases data == storing some value to an atomic variable == unlock a mutex
 - One thread acquires the same data == loading that value == lock a mutex
@@ -56,7 +56,7 @@ unsafe impl<T> Sync for Channel<T> where T: Send {}
 ```
 
 - We set `Channel<T>` to be `Sync` because the channel is designed to be used in a multi-threaded environment.
-- And `T`, which is `Send` (aka. message I believe), can be safely sent between threads.
+- And `T`, which is `Send` (aka. message), can be safely sent between threads.
 - `Send` and `Sync` should always be with `unsafe` block.
 
 Next, let's implement methods of the channel:
@@ -92,7 +92,7 @@ impl<T> Channel<T> {
 }
 ```
 
-- It is needed to deference the `(*self.message.get())` to get the `MaybeUninit` value.
+- It is needed to deference the `self.message.get()` to get the `MaybeUninit` value because it returns a raw pointer.
 - For receiving message in our channel, we do not provide a blocking interface. Instead, we will let the user to decide whether to block or not.
 - (Downside) Calling `send` more than once might cause a data race, while two or more threads try to write to the cell concurrently.
 - (Downside) Calling `receive` more than once causes two copies of the message, even if `T` is not `Copy`.
