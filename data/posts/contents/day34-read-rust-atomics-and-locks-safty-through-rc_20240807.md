@@ -4,9 +4,9 @@
 
 > At Topic: Chapter 5. Safety Through Runtime Checks
 
-> An Extension of the previous paragraph: An Unsafe One-Shot Channel
+> An Extension of the previous Record: An Unsafe One-Shot Channel
 
-The target of this chapter os to make misuse result in a panic with a clear message, rather than undefined behavior.
+The target of using runtime checks is to make misuse result in a panic with a clear message, rather than undefined behavior.
 
 ## Recall
 
@@ -20,8 +20,8 @@ The target of this chapter os to make misuse result in a panic with a clear mess
 
 We want the `receive` method:
 
-1. Avoid `receive` method being called before a message is ready
-2. Avoid `receive` method being called more than once
+1. Avoid being called before a message is ready
+2. Avoid being called more than once
 
 => Two things have been updated here:
 
@@ -35,22 +35,28 @@ pub struct Channel<T> {
     ready: AtomicBool,
 }
 
-// Before:
-pub unsafe fn receive(&self) -> T {
-    (*self.message.get()).assume_init_read()
-}
+impl<T> Channel<T> {
+    //...
 
-// After:
-/// Panics if no message is available yet,
-/// or if the message was already consumed.
-///
-/// Tip: Use `is_ready` to check first.
-pub fn receive(&self) -> T {
-    if !self.ready.swap(false, Acquire) {
-        panic!("no message available!");
+    // Before:
+    pub unsafe fn receive(&self) -> T {
+        (*self.message.get()).assume_init_read()
     }
 
-    unsafe { (*self.message.get()).assume_init_read() }
+    // After:
+    /// Panics if no message is available yet,
+    /// or if the message was already consumed.
+    ///
+    /// Tip: Use `is_ready` to check first.
+    pub fn receive(&self) -> T {
+        if !self.ready.swap(false, Acquire) {
+            panic!("no message available!");
+        }
+
+        unsafe { (*self.message.get()).assume_init_read() }
+    }
+
+    // ...
 }
 ```
 
@@ -70,7 +76,7 @@ pub fn is_ready(&self) -> bool {
 }
 ```
 
-For the `send` method, we like to prevent multiple send calls.
+For the `send` method, we like to prevent multiple send calls. => We declare one new variable called `in_use`.
 
 ```rust
 // source: https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/src/ch5_channels/s3_checks.rs
