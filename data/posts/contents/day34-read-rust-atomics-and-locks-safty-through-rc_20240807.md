@@ -1,4 +1,4 @@
-# [Day34] Read Rust Atomics and Locks - Safty Through Runtime Checks
+# [Day34] Read Rust Atomics and Locks - Safe Channel Through Runtime Checks
 
 > by Mara Bos
 

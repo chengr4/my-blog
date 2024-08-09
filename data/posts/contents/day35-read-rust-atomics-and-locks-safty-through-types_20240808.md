@@ -1,10 +1,10 @@
-# [Day35] Read Rust Atomics and Locks - Safty Through Types
+# [Day35] Read Rust Atomics and Locks - Safe Channel Through Types
 
 > by Mara Bos
 
 > At Topic: Chapter 5. Safety Through Types
 
-> An Extension of the previous Record: An Unsafe One-Shot Channel, Safety Through Runtime Checks
+> An Extension of the previous Records: An Unsafe One-Shot Channel, Safety Through Runtime Checks
 
 ## Recall
 
@@ -29,7 +29,7 @@ Target: Prevent `send` and `receive` methods being called multiple times.
 How:
 
 1. Create two separate types called `Sender` and `Receiver` (If the book hadn't taught it, I would never have thought of this approach in my entire life)
-2. Use `self` in the `send` and `receive` methods to consume the entire `Sender` and `Receiver` instances.
+2. Use `self` (rather than `&seldf`) in the `send` and `receive` methods to consume the entire `Sender` and `Receiver` instances.
 
 ```rust
 pub fn channel<T>() -> (Sender<T>, Receiver<T>) { … }
@@ -107,7 +107,6 @@ impl<T> Drop for Channel<T> {
     }
 }
 ```
-
 
 ## References
 

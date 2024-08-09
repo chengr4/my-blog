@@ -44,7 +44,7 @@ pub struct Channel<T> {
 ```
 
 - `UnsafeCell`: for multi-threaded environments
-- `MaybeUninit`: unsafe version of `Option<T>` for message storage
+- `MaybeUninit`: A low-level unsafe version alternative to `Option<T>` for message storage. (trade-off here: It saves memory but requires manual safety checks)
 - `AtomicBool`: for the ready flag
 
 Sequentially, it is needed to tell the compiler that our channel is OK to share between threads:

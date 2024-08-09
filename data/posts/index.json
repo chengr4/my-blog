@@ -1,6 +1,15 @@
 [
   {
-    "title": "[Day35] Read Rust Atomics and Locks - Safty Through Types",
+    "title": "[Day36] Read Rust Atomics and Locks - Better Performance of Type Check Channel",
+    "createdDate": "2024-08-09",
+    "categories": [
+      "cs"
+    ],
+    "file": "day36-read-rust-atomics-and-locks-bp-tcc-_20240809",
+    "excerpt": "Better performance means less convenience and simplicity. It is just a trade-off."
+  },
+  {
+    "title": "[Day35] Read Rust Atomics and Locks - Safe Channel Through Types",
     "createdDate": "2024-08-08",
     "categories": [
       "cs"
@@ -9,7 +18,7 @@
     "excerpt": "An Extension of the previous Record: An Unsafe One-Shot Channel, Safety Through Runtime Checks"
   },
   {
-    "title": "[Day34] Read Rust Atomics and Locks - Safty Through Runtime Checks",
+    "title": "[Day34] Read Rust Atomics and Locks - Safe Channel Through Runtime Checks",
     "createdDate": "2024-08-07",
     "categories": [
       "cs"
