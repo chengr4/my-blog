@@ -14,7 +14,7 @@ Target: preventing overhead of allocating memory
 
 How: Create a `Channel` that can be borrowed by the `Sender` and `Receiver`.
 
-Step 1: Channel is public again and remove `fn channel`
+**Step 1**: Channel is public again and remove `fn channel`
 
 ```rust
 pub struct Channel<T> {
@@ -25,7 +25,8 @@ pub struct Channel<T> {
 // removed
 // pub fn channel<T>() -> (Sender<T>, Receiver<T>) { ... }
 ```
-Step 2: Declare `Sender` and `Receiver` to borrow the channel
+
+**Step 2**: Declare `Sender` and `Receiver` to borrow the channel
 
 ```rust
 // Before
@@ -134,7 +135,7 @@ impl<T> Drop for Channel<T> {
 
 ## My Guess
 
-## `sender`'s `Send` Trait
+### `sender`'s `Send` Trait
 
 For the implementation, there is a test case:
 

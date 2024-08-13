@@ -1,11 +1,20 @@
 [
   {
+    "title": "[Day37] Read Rust Atomics and Locks - A Blocking Type Check Channel",
+    "createdDate": "2024-08-13",
+    "categories": [
+      "cs"
+    ],
+    "file": "day37-read-rust-atomics-and-locks-blocking-tcc_20240813",
+    "excerpt": "Target: Create a blocking channel"
+  },
+  {
     "title": "[Day36] Read Rust Atomics and Locks - Better Performance of Type Check Channel",
     "createdDate": "2024-08-09",
     "categories": [
       "cs"
     ],
-    "file": "day36-read-rust-atomics-and-locks-bp-tcc-_20240809",
+    "file": "day36-read-rust-atomics-and-locks-bp-tcc_20240809",
     "excerpt": "Better performance means less convenience and simplicity. It is just a trade-off."
   },
   {
