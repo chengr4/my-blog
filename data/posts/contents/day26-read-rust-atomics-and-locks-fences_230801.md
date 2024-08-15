@@ -38,7 +38,7 @@ Which are:
     a.load(Relaxed);
     fence(Acquire);
 
-    // Benefit: apply a memory ordering to multiple operations, conditionally usecases etc.
+    // Benefit: apply a memory ordering to multiple operations, conditionally use cases etc.
     ```
 
 - Using a separate fence can result in an extra processor instruction, though, which can be slightly less efficient.

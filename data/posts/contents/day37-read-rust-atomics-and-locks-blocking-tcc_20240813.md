@@ -34,7 +34,7 @@ Target: Create a blocking channel
 
 How: Put parking pattern in the `Receiver` and `Sender`
 
-**Step 1**: Refering thread of receiver to the sender and promise receiver cannot be sent to another thread
+**Step 1**: Referring thread of receiver to the sender and promise receiver cannot be sent to another thread
 
 ```rust
 use std::thread::Thread;
@@ -102,7 +102,6 @@ impl<T> Receiver<'_, T> {
         unsafe { (*self.channel.message.get()).assume_init_read() }
     }
 }
-
 ```
 
 ## References

@@ -21,7 +21,6 @@ let b = a.clone();
 assert_eq!(a.as_ptr(), b.as_ptr()); // Same allocation!
 ```
 
-
 ## Notes
 
 Target: Prevent `send` and `receive` methods being called multiple times.

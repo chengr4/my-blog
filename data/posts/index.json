@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day38] Read Rust Atomics and Locks - Build Basic Arc",
+    "createdDate": "2024-08-15",
+    "categories": [
+      "cs"
+    ],
+    "file": "day38-read-rust-atomics-and-locks-build-basic-arc_20240815",
+    "excerpt": "Arc is basically a pointer to a shared `ArcData<T>` object."
+  },
+  {
     "title": "[Day37] Read Rust Atomics and Locks - A Blocking Type Check Channel",
     "createdDate": "2024-08-13",
     "categories": [
