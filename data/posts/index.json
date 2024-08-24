@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day39] Read Rust Atomics and Locks - Upgrade Arc with `Weak` ability",
+    "createdDate": "2024-08-24",
+    "categories": [
+      "cs"
+    ],
+    "file": "day39-read-rust-atomics-and-locks-upgrade-arc-with-weak_20240824",
+    "excerpt": "A `Weak<T>` aka. weak pointer provides a solution for dropping cyclic structure"
+  },
+  {
     "title": "[Day38] Read Rust Atomics and Locks - Build Basic Arc",
     "createdDate": "2024-08-15",
     "categories": [

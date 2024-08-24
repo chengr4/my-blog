@@ -15,6 +15,10 @@
 - In other words, all types with interior mutability are built on top of `UnsafeCell`, Including: `Cell`, `RefCell`, `RwLock`, `Mutex`...
 - Gets a mutable raw pointer (`*mut T`) to the wrapped value by `get` method.
 
+```rust
+pub const fn get(&self) -> *mut T
+```
+
 ### Sync and Send Trait
 
 - `Sync`: A type is `Sync` if it is safe to reference its value from multiple threads

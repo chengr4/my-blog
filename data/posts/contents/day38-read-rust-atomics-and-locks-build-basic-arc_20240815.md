@@ -10,7 +10,7 @@
 
 - Goal: To share ownership
 - Thread safe (While `Rc` is not)
-- immutable (So is `Rc`)
+- Immutable (So is `Rc`)
 
 ```rust
 let a = Arc::new([1, 2, 3]);
@@ -23,7 +23,7 @@ assert_eq!(a.as_ptr(), b.as_ptr()); // Same allocation!
 
 > To see full implementation, please go [here](https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/src/ch6_arc/s1_basic.rs). I just write down things that I feel important.
 
-- `ArcData<T>` is the unit and should not be public
+`ArcData<T>` is the core unit of `Arc` and should not be public
 
 ```rust
 struct ArcData<T> {
@@ -34,8 +34,8 @@ struct ArcData<T> {
 
 Arc is basically a pointer to a shared `ArcData<T>` object. For this:
 
-- `Box<ArcData<T>>` is unacceptable because a Box represents exclusive ownership, not shared ownership.
-- Using reference is also unacceptable because of the lifetime issue (Arc does not follow the lifetime rule).
+- `Box<ArcData<T>>` is **unacceptable** because a Box represents exclusive ownership, not shared ownership.
+- Using reference is also **unacceptable** because of the lifetime issue (Arc does not follow the lifetime rule).
 - Instead, `std::ptr::NonNull<T>` is used which represents a pointer to `T` that is never null.
 
 ```rust
@@ -63,7 +63,7 @@ pub fn new(data: T) -> Arc<T> {
 - `Box::from_raw()`: reclaim exclusive ownership of the allocation (for dropping)
 - An `Arc` should not implement `DerefMut` since it represents shared ownership.
 - When `ref_count == 1`, get mutable reference is possible.
-- After changing the value by `get_mut`, we need to use mutex etc. to access the value (Actually, I do not understand why it is necessary).
+- After changing the value by `get_mut`, we need to use mutex etc. to access the value of `Arc` (Actually, I do not understand why it is necessary).
 
 ## References
 
