@@ -2,7 +2,7 @@
 
 > by Mara Bos
 
-> At Topic: Chapter 6. Basic Reference Counting
+> At Topic: Chapter 6. Weak Pointers
 
 A `Weak<T>` aka. weak pointer provides a solution for dropping "cyclic structure"
 
@@ -99,7 +99,7 @@ fn deref(&self) -> &T {
 }
 ```
 
-There are 2 focal points about `Arc::get_mut`:
+- There are 2 focal points about `Arc::get_mut`:
 
 ```rust
 struct ArcData<T> {
@@ -129,7 +129,7 @@ impl<T> Arc<T> {
 ```
 
 1. By `alloc_ref_count`, we can check both `Arc` and `Weak` count at the same time. If `alloc_ref_count` is 1, it means there's only one `Arc` and no `Weak` pointers. So, it's safe to get mutable access to the data.
-2. (my guess) `arc.weak.ptr.as_mut()` is used rather than `arc.weak.data()` because we need `&mut ArcData<T>` rather than `&ArcData<T>`.
+2. (My guess) `arc.weak.ptr.as_mut()` is used rather than `arc.weak.data()` because we need `&mut ArcData<T>` rather than `&ArcData<T>`.
 
 - (Quote from the book) Dropping an object in Rust will first run its Drop::drop function (if it implements Drop), and then drop all of its fields, one by one, recursively.
 

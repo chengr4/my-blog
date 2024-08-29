@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day40] Read Rust Atomics and Locks - Optimize Arc",
+    "createdDate": "2024-08-29",
+    "categories": [
+      "cs"
+    ],
+    "file": "day40-read-rust-atomics-and-locks-optimize-arc_20240829"
+  },
+  {
     "title": "[Day39] Read Rust Atomics and Locks - Upgrade Arc with `Weak` ability",
     "createdDate": "2024-08-24",
     "categories": [
