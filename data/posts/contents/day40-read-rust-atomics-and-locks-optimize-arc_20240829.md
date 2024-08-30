@@ -57,6 +57,8 @@ assert_eq!(some_var.load(Ordering::Relaxed), 10);
 
 > To see full implementation, please go [here](https://github.com/m-ou-se/rust-atomics-and-locks/blob/main/src/ch6_arc/s3_optimized.rs). I just write down things that I feel important.
 
+- In this case, the `Arc<T>` does not wrap around `Weak<T>`
+
 1. Since the existence of `Arc<T>` has already told us whether the data is sill alive or not, we do not need another `None` state to tell us that. Therefore, instead of `Option<T>`, we use `ManuallyDrop<T>` to store the data.
 2. `std::mem::ManuallyDrop<T>`: it takes the exact same amount of space as a `T`, but allows us to manually drop it at any point by using an `unsafe` call to `ManuallyDrop::drop()`.
 3. The way to design `alloc_ref_count` is really cool
@@ -82,31 +84,31 @@ struct ArcData<T> {
 
 1. I think if another thread runs `weak.clone()` right after the main thread runs `get_mut()`, it is possible that the process could be aborted.
 
-2. In `get_mut()` implementation, I think it is allowed to clone an `Arc` between `fence(Acquire)` and if condition which might violate the exclusive access to the data.
+2. In `get_mut()` implementation, I think it is allowed to clone an `Arc` between `fence(Acquire)` and `if` condition which might violate the exclusive access to the data.
 
 ```rust
 pub fn get_mut(arc: &mut Self) -> Option<&mut T> {
-        // Acquire matches Weak::drop's Release decrement, to make sure any
-        // upgraded pointers are visible in the next data_ref_count.load.
-        if arc.data().alloc_ref_count.compare_exchange(
-            1, usize::MAX, Acquire, Relaxed
-        ).is_err() {
-            return None;
-        }
-        let is_unique = arc.data().data_ref_count.load(Relaxed) == 1;
-        // Release matches Acquire increment in `downgrade`, to make sure any
-        // changes to the data_ref_count that come after `downgrade` don't
-        // change the is_unique result above.
-        arc.data().alloc_ref_count.store(1, Release);
-        if !is_unique {
-            return None;
-        }
-
-        // I think it is allowed to clone an `Arc` here
-
-        fence(Acquire);
-        unsafe { Some(&mut *arc.data().data.get()) }
+    // Acquire matches Weak::drop's Release decrement, to make sure any
+    // upgraded pointers are visible in the next data_ref_count.load.
+    if arc.data().alloc_ref_count.compare_exchange(
+        1, usize::MAX, Acquire, Relaxed
+    ).is_err() {
+        return None;
     }
+    let is_unique = arc.data().data_ref_count.load(Relaxed) == 1;
+    // Release matches Acquire increment in `downgrade`, to make sure any
+    // changes to the data_ref_count that come after `downgrade` don't
+    // change the is_unique result above.
+    arc.data().alloc_ref_count.store(1, Release);
+    if !is_unique {
+        return None;
+    }
+
+    // I think it is allowed to clone an `Arc` here
+
+    fence(Acquire);
+    unsafe { Some(&mut *arc.data().data.get()) }
+}
 ```
 
 ## References

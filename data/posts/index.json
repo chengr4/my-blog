@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day41] Read Rust Atomics and Locks - Processor Introduction",
+    "createdDate": "2024-08-30",
+    "categories": [
+      "cs"
+    ],
+    "file": "day41-read-rust-atomics-and-locks-processor-intro_20240830"
+  },
+  {
     "title": "[Day40] Read Rust Atomics and Locks - Optimize Arc",
     "createdDate": "2024-08-29",
     "categories": [
