@@ -12,11 +12,10 @@ Two main specific processor architectures:
 
 - CISC, complex instruction set computer
 - Able to directly operate on memory
-- Intel + AMD
+- Intel + AMD are two main manufacturers
 - Mainly used in desktops, laptops, servers and game consoles
 - x86-16 and x86-32 are mainly dominated by Intel
 - x86-64: AMD64, IA-64 (Intel) and more popular AMD's extensions IA-32e (Intel), EMT64T (Intel), Intel 64
-- ARM64
 
 ### ARM64
 

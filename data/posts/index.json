@@ -1,5 +1,13 @@
 [
   {
+    "title": "[Day42] Load and Store in the Processor",
+    "createdDate": "2024-09-10",
+    "categories": [
+      "cs"
+    ],
+    "file": "day42-read-rust-atomics-and-locks-load-and-store-in-the-processor_20240910"
+  },
+  {
     "title": "[Day41] Read Rust Atomics and Locks - Processor Introduction",
     "createdDate": "2024-08-30",
     "categories": [
