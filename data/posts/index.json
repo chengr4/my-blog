@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day43] Read Rust Atomics and Locks - Read-Modify-Write in the x86 Processor",
+    "createdDate": "2024-09-22",
+    "categories": [
+      "cs"
+    ],
+    "file": "day43-read-rust-atomics-and-locks-read-modify-write-in-the-x86processor_20240922",
+    "excerpt": "x86 systems provide an instruction prefix called `lock` as a modifier to make instructions like `add` atomic."
+  },
+  {
     "title": "[Day42] Load and Store in the Processor",
     "createdDate": "2024-09-10",
     "categories": [

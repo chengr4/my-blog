@@ -6,7 +6,7 @@
 
 ## Notes
 
-Interestingly, both Non-atomic store through `&mut i32` and atomic store to an `AtomicI32` are compiled to the same assembly code.
+Interestingly, both non-atomic store through `&mut i32` and atomic store to an `AtomicI32` are compiled to the same assembly code.
 
 ```rust
 // Non-atomic store through &mut i32
