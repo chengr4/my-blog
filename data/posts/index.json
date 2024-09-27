@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day44] Read Rust Atomics and Locks - Load-linked and Store-Conditional Instructions on RISC",
+    "createdDate": "2024-09-26",
+    "categories": [
+      "cs"
+    ],
+    "file": "day44-read-rust-atomics-and-locks-ll-sc-risc_20240926",
+    "excerpt": "A `compare-and-exchange` loop is the most common way to implement atomic operations."
+  },
+  {
     "title": "[Day43] Read Rust Atomics and Locks - Read-Modify-Write in the x86 Processor",
     "createdDate": "2024-09-22",
     "categories": [

@@ -10,7 +10,7 @@
 
 - Compare-and-Exchange checks if the atomic value is equal to a given value, and only if that is the case does it replace it with a new value (as a single operation)
 - `compare_exchange_weak`: Similar to `compare_exchange`, but the difference is that the weak version may still sometimes leave the value untouched and return an Err, even though the atomic value matched the expected value.
-- We could use Compare-and-Exchange to implement all the other atomic operations by putting it in a loop to retry if it did change
+- We could use Compare-and-Exchange to implement all the other atomic operations by putting it in a loop to retry if it did change.
 
 ```rust
 // source: https://doc.rust-lang.org/std/sync/atomic/struct.AtomicUsize.html#examples-11
@@ -53,9 +53,9 @@ a:
 ```
 
 - While loading and storing happens in different steps in `ARM64`, it is clear that the instructions are not atomic.
-- `x86-64`'s `add` instruction will be seperated by the process into several **micro-instructions** behind the scenes, so it is not atomic as well.
+- `x86-64`'s `add` instruction will be separated by the process into several **micro-instructions** behind the scenes, so it is not atomic as well.
 
-> If instructions run on a single core, the atomic issue is not a problem. But if multiple cores are involved, it is crucial to consider the multiple steps of a read-modify-write operation.
+> If instructions run on a single core, the atomic issue is not a problem, as switching a processor core between threads generally only happens **between instructions**. But if multiple cores are involved, it is crucial to consider the multiple steps of a read-modify-write operation.
 
 `x86` systems provide an instruction prefix called `lock` as a modifier to make instructions like `add` **atomic**.
 
@@ -94,7 +94,7 @@ Instead of the `add` instruction,  the `xadd` (exchange and add) instruction is 
 - For subtraction, this isn't problematic since `xadd` can be used with negative values.
 - For `and`, `or` and `xor`(Bitwise Operations) => `bts` (bit test and set), `btr` (bit test and reset), and `btc` (bit test and complement)
 - When operations affect more than one bit, they cannot be represented by a single `x86-64` instruction.
-- The `x86-64` architecture supports a lock-prefixable `cmpxchg` (compare and exchange) instructionm which can be used to implement atomic operations that are not directly supported by the `x86-64` instruction such as `fetch_or`:
+- The `x86-64` architecture supports a lock-prefixable `cmpxchg` (compare and exchange) instruction, which can be used to implement atomic operations that are not directly supported by the `x86-64` instruction such as `fetch_or`:
 
 ```rust
 pub fn a(x: &AtomicI32) -> i32 {
@@ -116,7 +116,6 @@ a:
                                        ; - If not, store the current value at rdi in eax
     jne .L1                       ; If the comparison failed (values were not equal), jump back to .L1 to retry
     ret                           ; Return from the function, with the original value in eax
-
 ```
 
 > On `x86-64`, there is no difference between `compare_exchange` and `compare_exchange_weak`. Both compile down to a `lock cmpxchg` instruction.
@@ -124,5 +123,5 @@ a:
 ## References
 
 - [Rust Atomics and Locks by Mara Bos](https://marabos.nl/atomics/)
-- [並行程式設計](https://hackmd.io/@sysprog/concurrency/https%3A%2F%2Fhackmd.io%2F%40sysprog%2FS1AMIFt0D)
+- [並行程式設計 (zh-hant)](https://hackmd.io/@sysprog/concurrency/https%3A%2F%2Fhackmd.io%2F%40sysprog%2FS1AMIFt0D)
 - [Code examples of Rust Atomics and Locks](https://github.com/m-ou-se/rust-atomics-and-locks)
