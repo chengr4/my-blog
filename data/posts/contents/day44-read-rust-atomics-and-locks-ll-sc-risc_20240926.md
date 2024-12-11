@@ -17,13 +17,14 @@ Background: A `compare-and-exchange` loop is the most common way to implement at
 - ARM64 always lacks single-instruction atomic `fetch-and-modify` or `compare-and-exchange` operations.
 - Due to its design, ARM64 separates load and store steps from calculations and comparisons.
 - ARM64 uses `ldxr` (load exclusive register) and `stxr` (store exclusive register) for load-linked and store-conditional operations.
+- Use `fetch-and-modify` methods instead of a `compare-and-exchange` loop when possible.
 
 > `clrex` (clear exclusive) is available as an alternative to `stxr` to stop tracking memory writes without storing any data.
 
 Here is an example for `x.fetch_add(10, Relaxed)` in ARM64:
 
 ```
-; non-atomic code to add 10 in function a
+; Non-atomic code to add 10 in function a
 a:
     ldr w8, [x0]
     add w8, w8, #10
@@ -41,15 +42,15 @@ a:
     ret ; Return from the function.
 ```
 
-- Compilers generally minimize the number of instructions in LL/SC patterns to reduce the risk of LL/SC loops failing repeatedly or spinning indefinitely.
+> Compilers generally minimize the number of instructions in LL/SC patterns to reduce the risk of LL/SC loops failing repeatedly or spinning indefinitely.
 
 ### ARMv8.1 Atomic Instructions
 
 - ARMv8.1 introduced new CISC-style atomic instructions in ARM64 for common atomic operations.
 - E.g. `ldadd` (load and add) for `fetch_add`, without the need for LL/SC loops.
 - E.g. instructions for `fetch_max`
-- E.g. `cas` (compare and swap) coressponds to `compare_exchange`.
-- These new instructions can be more performant than LL/SC patern and good for some specialized hardware.
+- E.g. `cas` (compare and swap) corresponds to `compare_exchange`.
+- These new instructions can be more performant than LL/SC pattern and good for some specialized hardware.
 
 ### Compare-and-exchange on ARM
 
