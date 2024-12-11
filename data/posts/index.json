@@ -1,5 +1,14 @@
 [
   {
+    "title": "[Day45] Read Rust Atomics and Locks - Caching and Cache Coherence",
+    "createdDate": "2024-12-11",
+    "categories": [
+      "cs"
+    ],
+    "file": "day45-read-rust-atomics-and-caching-cc_20241211",
+    "excerpt": "Caching the entire block allows subsequent instructions to access the same block without needing to fetch it from memory again."
+  },
+  {
     "title": "[Day44] Read Rust Atomics and Locks - Load-linked and Store-Conditional Instructions on RISC",
     "createdDate": "2024-09-26",
     "categories": [
